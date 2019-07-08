@@ -18,8 +18,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::all();
-        $roles = Role::all();
+        $user = User::where('id', '!=', auth()->user()->id)->get();
+        $roles = Role::where('name', '!=', 'Admin')->get();
         return view('admin.user', compact('user', 'roles'));
     }
 
@@ -107,9 +107,11 @@ class UserController extends Controller
             $user->name = ucwords($request->name);
             $user->username = $request->username;
             $user->email = $request->email;
-            $user->password = bcrypt($request->password);
-            $user->assignRole($request->role);
-            $user->save();
+            if ($request->password) {
+                $user->password = bcrypt($request->password);
+            }
+            $user->syncRoles($request->role);
+            $user->update();
 
             return response()->json($user);
         }

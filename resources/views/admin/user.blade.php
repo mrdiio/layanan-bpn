@@ -110,7 +110,7 @@ Daftar User
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Hak Akses</label>
                         <div class="col-lg-9">
-                            <select class="select" name="role" id="role">
+                            <select class="select" name="role" id="role" required>
                                 <option value="" selected disabled hidden></option>                                
                                 @foreach ($roles as $role)
                                 <option value="{{ $role->name }}">{{ ucwords($role->name) }}</option>

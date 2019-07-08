@@ -24,7 +24,7 @@ Route::view('/register', function() {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'Admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['role:Admin'], 'namespace' => 'Admin'], function () {
     Route::resource('user', 'UserController');
     Route::resource('permission', 'PermissionController');
     Route::resource('role', 'RoleController');
