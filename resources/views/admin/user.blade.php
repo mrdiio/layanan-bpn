@@ -83,7 +83,8 @@ Daftar User
                 @csrf
                 <div class="modal-body">
                         <div class="alert alert-danger alert-styled-left alert-bordered" id="error-input" hidden>
-                            
+                            <ul id="error-list">
+                            </ul>
                         </div>
 
                     <input type="text" class="hidden" id="_id">
