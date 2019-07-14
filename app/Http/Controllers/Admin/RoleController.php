@@ -11,6 +11,11 @@ use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:Superadmin');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -42,7 +47,7 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|min:3|unique:roles'
+            'name' => 'required|min:2|unique:roles'
         ]);
 
         if ($validator->fails()) {
@@ -93,7 +98,7 @@ class RoleController extends Controller
     public function update(Request $request, Role $role)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|min:3|unique:roles,name,'.$role->id
+            'name' => 'required|min:2|unique:roles,name,'.$role->id
         ]);
 
         if ($validator->fails()) {

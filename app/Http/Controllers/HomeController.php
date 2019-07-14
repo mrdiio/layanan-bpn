@@ -23,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = auth()->user();
+        
+        if ($user->hasanyrole('Admin|Superadmin')) {
+            return redirect()->route('admin.dashboard');
+        } elseif ($user->hasRole('Loket')) {
+            return redirect()->route('loket.dashboard');
+        } else {
+            return 'forbidden';
+        }
     }
 }

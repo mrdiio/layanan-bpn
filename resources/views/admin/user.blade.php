@@ -80,8 +80,12 @@ Daftar User
                 </button>
             </div>
             <form method="post" class="form-horizontal" id="form">
+                @csrf
                 <div class="modal-body">
-                    @csrf
+                        <div class="alert alert-danger alert-styled-left alert-bordered" id="error-input" hidden>
+                            
+                        </div>
+
                     <input type="text" class="hidden" id="_id">
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Nama Lengkap</label>
@@ -162,7 +166,7 @@ Daftar User
         columnDefs: [{ 
             orderable: false,
             width: '100px',
-            targets: [ 4 ]
+            targets: [ 5 ]
         }],
       });
     });

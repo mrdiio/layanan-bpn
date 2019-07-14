@@ -30,15 +30,13 @@
 						<div class="page-title">
 							<h4>
 								<i class="icon-arrow-left52 position-left"></i> 
-								<span class="text-semibold">@yield('page-title') &nbsp&nbsp</span>
-
-								@yield('custom-button')
+								<span class="text-semibold">@yield('page-title')</span>
 							</h4>
 						</div>
 
 						<div class="heading-elements">
 							<ul class="breadcrumb heading-text breadcrumb-arrows">
-								<li><a href="{{ route('home') }}"><i class="icon-home2"></i></a></li>
+								<li><a href="{{ route('check-dashboard') }}"><i class="icon-home2"></i></a></li>
 								@yield('breadcrumb')
 								<li class="active">@yield('page-title')</li>
 							</ul>

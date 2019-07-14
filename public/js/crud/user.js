@@ -6,6 +6,7 @@ $(function() {
     $(document).on('click', '#addModal', function(e) {
         e.preventDefault();
         $('.modal.'+url).modal('show');
+        $('#error-input').hide();
         $('.modal-title').text('Tambah ' + m_title);
         $('#form')[0].reset();
         $('#form').attr('action', url);
@@ -31,6 +32,10 @@ $(function() {
                 if(data.errors){
                     toastr.error('Terjadi kesalahan saat input data.', 'Error', {timeOut: 5000});
                     // console.log(data.errors);
+                    $('#error-input').show();
+                    $.each(data.errors, function (i, item) {
+                        $('#error-input').text(item);
+                    })
                 } else {
                     toastr.success('Data berhasil disimpan!', 'Sukses', {timeOut: 5000});
                     location.reload();
@@ -52,6 +57,7 @@ $(function() {
             url: url + '/' + id + '/edit',
             success: function(data){
                 $('.modal.'+url).modal('show');
+                $('#error-input').hide();
                 $('.modal-title').text('Edit ' + m_title);
                 $('#form')[0].reset();
                 $('#form').attr('action', url+'/'+data.id);
@@ -90,7 +96,10 @@ $(function() {
                 if(data.errors){
                     toastr.error('Terjadi kesalahan saat ubah data.', 'Error', {timeOut: 5000});
                     // console.log(data.errors);
-                    
+                    $('#error-input').show();
+                    $.each(data.errors, function (i, item) {
+                        $('#error-input').text(item);
+                    })
                 } else {
                     toastr.success('Data berhasil disimpan!', 'Sukses', {timeOut: 5000});
                     location.reload();

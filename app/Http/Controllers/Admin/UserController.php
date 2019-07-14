@@ -11,6 +11,11 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:Superadmin|Admin');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +23,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::where('id', '!=', auth()->user()->id)->get();
-        $roles = Role::where('name', '!=', 'Admin')->get();
+        $user = User::whereHas('roles', function ($query) {
+                        $query->whereNotIn('name', ['Superadmin']);
+                    })->whereNotIn('id', [auth()->user()->id])
+                    ->get();
+        $roles = Role::whereNotIn('name', ['Superadmin'])->get();
         return view('admin.user', compact('user', 'roles'));
     }
 
