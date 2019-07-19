@@ -9,13 +9,13 @@
         <div class="tp-banner rev_slider" data-version="5.0">
             <ul>
                 <!--BEGIN: SLIDE #1 -->
-                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000">
+                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-style="dark">
                     <img 
                         alt="" 
-                        src="{{asset('images/1556086477.jpg')}}"
-                        data-bgposition="center center" 
-                        data-bgfit="cover" 
-                        data-bgrepeat="no-repeat"
+                        src="{{asset('images/bg-43.jpg')}}"
+						data-bgposition="center center" 
+						data-bgfit="cover" 
+						data-bgrepeat="no-repeat"
                         >   
                 </li>
                 <!--END -->  

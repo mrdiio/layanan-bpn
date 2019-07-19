@@ -14,7 +14,7 @@
 	<link rel="shortcut icon" href="favicon.ico"/>
 </head>
 
-<body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-topbar c-layout-header-topbar-collapse">
+<body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen">
     @include('layouts.partsfront.header')
         
     <!-- BEGIN: PAGE CONTAINER -->
