@@ -32,10 +32,11 @@ $(function() {
                 if(data.errors){
                     toastr.error('Terjadi kesalahan saat input data.', 'Error', {timeOut: 5000});
                     // console.log(data.errors);
-                    $('#error-input').show();
+                    $('#error-list').html('');
                     $.each(data.errors, function (i, item) {
-                        $('#error-input').text(item);
+                        $('#error-list').append('<li>'+item+'</li>');
                     })
+                    $('#error-input').show();
                 } else {
                     toastr.success('Data berhasil disimpan!', 'Sukses', {timeOut: 5000});
                     location.reload();
@@ -96,10 +97,11 @@ $(function() {
                 if(data.errors){
                     toastr.error('Terjadi kesalahan saat ubah data.', 'Error', {timeOut: 5000});
                     // console.log(data.errors);
-                    $('#error-input').show();
+                    $('#error-list').html('');
                     $.each(data.errors, function (i, item) {
-                        $('#error-input').text(item);
+                        $('#error-list').append('<li>'+item+'</li>');
                     })
+                    $('#error-input').show();
                 } else {
                     toastr.success('Data berhasil disimpan!', 'Sukses', {timeOut: 5000});
                     location.reload();
