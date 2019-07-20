@@ -21,8 +21,8 @@
                         </ul>
                     </li>
                     @endrole
-                    @role('Loket')
-                    <li class="{{ request()->is('*/pemohon') ? 'active' : '' }}"><a href="{{ route('pemohon.index') }}"><i class="icon-user"></i> <span>Pemohon</span></a></li>
+                    @role('Loket|Superadmin')
+                    <li class="{{ request()->is('*/permohonan') ? 'active' : '' }}"><a href="{{ route('permohonan.create') }}"><i class="icon-user"></i> <span> Tambah Permohonan</span></a></li>
                     @endrole
                     <!-- /main -->
                 </ul>

@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Loket;
+namespace App\Http\Controllers;
 
-use App\Pemohon;
+use App\Permohonan;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class PemohonController extends Controller
+class PermohonanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class PemohonController extends Controller
      */
     public function index()
     {
-        //
+        return view('loket.permohonan');
     }
 
     /**
@@ -25,7 +24,7 @@ class PemohonController extends Controller
      */
     public function create()
     {
-        //
+        return view('loket.permohonan-create');
     }
 
     /**
@@ -42,10 +41,10 @@ class PemohonController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pemohon  $pemohon
+     * @param  \App\Permohonan  $permohonan
      * @return \Illuminate\Http\Response
      */
-    public function show(Pemohon $pemohon)
+    public function show(Permohonan $permohonan)
     {
         //
     }
@@ -53,10 +52,10 @@ class PemohonController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pemohon  $pemohon
+     * @param  \App\Permohonan  $permohonan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pemohon $pemohon)
+    public function edit(Permohonan $permohonan)
     {
         //
     }
@@ -65,10 +64,10 @@ class PemohonController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pemohon  $pemohon
+     * @param  \App\Permohonan  $permohonan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pemohon $pemohon)
+    public function update(Request $request, Permohonan $permohonan)
     {
         //
     }
@@ -76,10 +75,10 @@ class PemohonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pemohon  $pemohon
+     * @param  \App\Permohonan  $permohonan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pemohon $pemohon)
+    public function destroy(Permohonan $permohonan)
     {
         //
     }
