@@ -8,9 +8,6 @@
 
 	<!-- Main navbar -->
 	<div class="navbar navbar-default navbar-inverse bg-orange-400">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="index.html"><img src="{{ asset('images/logo_light.png') }}" alt=""></a>
-		</div>
 
 		<div class="navbar-collapse collapse" id="navbar-mobile">
 			<ul class="nav navbar-nav navbar-right">
