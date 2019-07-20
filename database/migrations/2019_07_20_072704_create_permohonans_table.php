@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePemohonsTable extends Migration
+class CreatePermohonansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePemohonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pemohons', function (Blueprint $table) {
+        Schema::create('permohonans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('pemohon_id');
             $table->string('nomor_pemohon')->unique();
@@ -31,8 +31,11 @@ class CreatePemohonsTable extends Migration
             $table->boolean('surat_rencana')->nullable();
             $table->boolean('surat_pernyataan_modal')->nullable();
             $table->boolean('surat_lain')->nullable();
-            $table->string('peta_bidang')->nullable();
-            $table->string('ptpgt')->nullable();
+            $table->string('legalitas')->nullable();
+            $table->enum('bayar_ptpgt', ['0','1'])->default('0');
+            $table->string('file_peta_bidang')->nullable();
+            $table->string('file_ptpgt')->nullable();
+            $table->string('status');
             $table->timestamps();
             $table->foreign('pemohon_id')->references('id')->on('biodatas')->onDelete('cascade');
         });
@@ -45,6 +48,6 @@ class CreatePemohonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pemohons');
+        Schema::dropIfExists('permohonans');
     }
 }

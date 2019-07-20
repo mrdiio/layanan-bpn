@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBiodatasTable extends Migration
+class CreatePemohonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBiodatasTable extends Migration
      */
     public function up()
     {
-        Schema::create('biodatas', function (Blueprint $table) {
+        Schema::create('pemohons', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
             $table->string('umur');
@@ -24,10 +24,7 @@ class CreateBiodatasTable extends Migration
             $table->string('nama_ibu');
             $table->string('status_pasangan')->nullable();
             $table->string('nama_pasangan')->nullable();
-            $table->string('legalitas');
-            $table->enum('bayar_ptpgt', ['0','1'])->default('0');
             $table->string('no_hp');
-            $table->string('status');
             $table->timestamps();
         });
     }
@@ -39,6 +36,6 @@ class CreateBiodatasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('biodatas');
+        Schema::dropIfExists('pemohons');
     }
 }
