@@ -32,7 +32,7 @@ class CreateTanahsTable extends Migration
             $table->string('dasar_penguasaan');
             $table->string('rencana_penggunaan');
             $table->timestamps();
-            $table->foreign('pemohon_id')->references('id')->on('biodatas')->onDelete('cascade');
+            $table->foreign('pemohon_id')->references('id')->on('pemohons')->onDelete('cascade');
         });
     }
 

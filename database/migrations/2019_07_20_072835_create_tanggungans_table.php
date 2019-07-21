@@ -18,7 +18,7 @@ class CreateTanggungansTable extends Migration
             $table->unsignedBigInteger('pemohon_id');
             $table->string('nama');
             $table->timestamps();
-            $table->foreign('pemohon_id')->references('id')->on('biodatas')->onDelete('cascade');
+            $table->foreign('pemohon_id')->references('id')->on('pemohons')->onDelete('cascade');
         });
     }
 

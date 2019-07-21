@@ -18,8 +18,8 @@ class CreatePemohonsTable extends Migration
             $table->string('nama');
             $table->string('umur');
             $table->string('kewarganegaraan');
-            $table->string('nomor_identitas')->unique();
             $table->string('jenis_identitas');
+            $table->string('nomor_identitas')->unique();
             $table->string('pekerjaan');
             $table->text('alamat');
             $table->string('nama_ibu');
