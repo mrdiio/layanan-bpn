@@ -39,37 +39,48 @@
         </div>
     </div>
 </section><!-- END: LAYOUT/SLIDERS/REVO-SLIDER-4 -->
-<!-- BEGIN: CONTENT/BARS/BAR-3 -->
-<div class="c-content-box c-size-md c-bg-dark">
-    <div class="container">
-        <div class="c-content-bar-3">
-            <div class="c-content-title-1">
-                <h3 class="c-font-uppercase c-font-bold">Pencarian Status Permohonan Sertifikat</h3>
-                <div class="c-line-left c-theme-bg"></div>
-
-                <form class="c-shop-advanced-search-1" action="#">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <input class="form-control  c-square c-theme input-lg" type="text" placeholder="Masukkan Nomor Pemohon">
-                        </div>
-                        <div class="form-group col-md-1">
-                            <span class="input-group-btn">
-                                <a type="submit" href="/search" target="__blank" class="btn c-theme-btn c-btn-uppercase btn-lg c-btn-sbold c-btn-square">Cari</a>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div> 
-</div>
-<!-- END: CONTENT/BARS/BAR-3 -->
+<div class="c-content-box c-size-md c-bg-white">
+	<div class="container">
+		<div class="c-content-title-1">
+			<h3 class="c-center c-font-dark c-font-uppercase">Status Permohonan Sertifikat</h3>
+			<div class="c-line-center c-theme-bg"></div>
+			<p class="c-center">Anda Dapat Melihat Status Permohonan Sertifikat Melalui Tabel Dibawah Ini</p>
+		</div>
+		
+		<div class="c-content-panel">
+			<div class="c-label">Status Permohonan Sertifikat</div>
+			<div class="c-body">
+				<div class="row">
+					<div class="col-md-12">
+						<table class="table">
+							<thead>
+							<tr>
+								<th class="col-md-1">#</th>
+								<th class="col-md-3">Nomor Pemohon</th>
+								<th class="col-md-3">Nama</th>
+								<th class="col-md-4">Status</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>1122334455</td>
+								<td>Khairul</td>
+								<td>Petugas IP Turun Lapangan</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+ </div>   
 <!-- END: PAGE CONTENT -->
 @endsection
 
 @push('css')
-	
+
 @endpush
 
 @push('js')
