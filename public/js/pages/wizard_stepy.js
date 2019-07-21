@@ -1,8 +1,8 @@
 /* ------------------------------------------------------------------------------
 *
-*  # Steps wizard
+*  # Stepy wizard
 *
-*  Specific JS code additions for wizard_steps.html page
+*  Specific JS code additions for wizard_stepy.html page
 *
 *  Version: 1.1
 *  Latest update: Dec 25, 2015
@@ -10,73 +10,69 @@
 * ---------------------------------------------------------------------------- */
 
 $(function() {
-    //
-    // Wizard with validation
-    //
 
-    // Show form
-    var form = $(".steps-validation").show();
+
+    // Override defaults
+    $.fn.stepy.defaults.legend = false;
+    $.fn.stepy.defaults.transition = 'fade';
+    $.fn.stepy.defaults.duration = 150;
+    $.fn.stepy.defaults.backLabel = '<i class="icon-arrow-left13 position-left"></i> Back';
+    $.fn.stepy.defaults.nextLabel = 'Next <i class="icon-arrow-right14 position-right"></i>';
+
+
+
+    // Wizard examples
+    // ------------------------------
+
+    // Basic wizard setup
+    $(".stepy-basic").stepy();
+
+
+    // Hide step description
+    $(".stepy-no-description").stepy({
+        description: false
+    });
+
+
+    // Clickable titles
+    $(".stepy-clickable").stepy({
+        titleClick: true
+    });
+
+
+    // Stepy callbacks
+    $(".stepy-callbacks").stepy({
+        next: function(index) {
+            alert('Going to step: ' + index);
+        },
+        back: function(index) {
+            alert('Returning to step: ' + index);
+        },
+        finish: function() {
+            alert('Submit canceled.');
+            return false;
+        }
+    });
+
+
+    //
+    // Validation
+    //
 
     // Initialize wizard
-    $(".steps-validation").steps({
-        headerTag: "h6",
-        bodyTag: "fieldset",
-        transitionEffect: "fade",
-        titleTemplate: '<span class="number">#index#</span> #title#',
-        autoFocus: true,
-        labels: {
-            finish: 'Submit'
-        },
-        onStepChanging: function (event, currentIndex, newIndex) {
-
-            // Allways allow previous action even if the current form is not valid!
-            if (currentIndex > newIndex) {
-                return true;
+    $(".stepy-validation").stepy({
+        validate: true,
+        block: true,
+        next: function(index) {
+            if (!$(".stepy-validation").validate(validate)) {
+                return false
             }
-
-            // Forbid next action on "Warning" step if the user is to young
-            if (newIndex === 3 && Number($("#age-2").val()) < 18) {
-                return false;
-            }
-
-            // Needed in some cases if the user went back (clean up)
-            if (currentIndex < newIndex) {
-
-                // To remove error styles
-                form.find(".body:eq(" + newIndex + ") label.error").remove();
-                form.find(".body:eq(" + newIndex + ") .error").removeClass("error");
-            }
-
-            form.validate().settings.ignore = ":disabled,:hidden";
-            return form.valid();
-        },
-
-        onStepChanged: function (event, currentIndex, priorIndex) {
-
-            // Used to skip the "Warning" step if the user is old enough.
-            if (currentIndex === 2 && Number($("#age-2").val()) >= 18) {
-                form.steps("next");
-            }
-
-            // Used to skip the "Warning" step if the user is old enough and wants to the previous step.
-            if (currentIndex === 2 && priorIndex === 3) {
-                form.steps("previous");
-            }
-        },
-
-        onFinishing: function (event, currentIndex) {
-            form.validate().settings.ignore = ":disabled";
-            return form.valid();
-        },
-
-        // onFinished: function (event, currentIndex) {
-        //     alert("Submitted!");
-        // }
+        }
     });
 
 
     // Initialize validation
-    $(".steps-validation").validate({
+    var validate = {
         ignore: 'input[type=hidden], .select2-search__field', // ignore hidden fields
         errorClass: 'validation-error-label',
         successClass: 'validation-valid-label',
@@ -129,12 +125,17 @@ $(function() {
                 email: true
             }
         }
-    });
+    }
 
 
 
     // Initialize plugins
     // ------------------------------
+
+    // Apply "Back" and "Next" button styling
+    $('.stepy-step').find('.button-next').addClass('btn btn-primary');
+    $('.stepy-step').find('.button-back').addClass('btn btn-default');
+
 
     // Select2 selects
     $('.select').select2();
