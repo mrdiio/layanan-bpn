@@ -9,14 +9,30 @@
         <div class="tp-banner rev_slider" data-version="5.0">
             <ul>
                 <!--BEGIN: SLIDE #1 -->
-                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-style="dark">
+                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000">
                     <img 
                         alt="" 
-                        src="{{asset('images/bg-43.jpg')}}"
-						data-bgposition="center center" 
-						data-bgfit="cover" 
-						data-bgrepeat="no-repeat"
+                        src="{{asset('images/bpn.jpg')}}"
+                        data-bgposition="center center" 
+                        data-bgfit="cover" 
+                        data-bgrepeat="no-repeat"
                         >   
+                    <div class="tp-caption customin customout"
+                        data-x="center" 
+                        data-y="center"
+                        data-hoffset="" 
+                        data-voffset="-50"
+                        data-speed="500" 
+                        data-start="1000" 
+                        data-transform_idle="o:1;" 
+                        data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;" 
+                        data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;" 
+                        data-splitin="none" 
+                        data-splitout="none" 
+                        data-elementdelay="0.1" 
+                        data-endelementdelay="0.1" 
+                        data-endspeed="600">
+                    </div>
                 </li>
                 <!--END -->  
             </ul>
@@ -28,13 +44,13 @@
     <div class="container">
         <div class="c-content-bar-3">
             <div class="c-content-title-1">
-                <h3 class="c-font-uppercase c-font-bold">Pencarian Status Pelayanan Pembuatan Sertifikat</h3>
+                <h3 class="c-font-uppercase c-font-bold">Pencarian Status Permohonan Sertifikat</h3>
                 <div class="c-line-left c-theme-bg"></div>
 
                 <form class="c-shop-advanced-search-1" action="#">
                     <div class="row">
-                        <div class="col-md-3">
-                        <input type="text" class="form-control  c-square c-theme" placeholder="Nomor Pemohon">
+                        <div class="col-md-4">
+                            <input class="form-control  c-square c-theme input-lg" type="text" placeholder="Masukkan Nomor Pemohon">
                         </div>
                         <div class="form-group col-md-1">
                             <span class="input-group-btn">
