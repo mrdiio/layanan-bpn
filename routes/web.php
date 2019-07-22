@@ -36,6 +36,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 });
 
 Route::group(['prefix' => 'loket', 'middleware' => 'role:Loket|Superadmin'], function () {
-    Route::resource('dashboard', 'Loket/DashboardController')->names(['index' => 'loket.dashboard']);
+    Route::resource('dashboard', 'loket\DashboardController')->names(['index' => 'loket.dashboard']);
     Route::resource('permohonan', 'PermohonanController');
 });

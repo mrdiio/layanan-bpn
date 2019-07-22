@@ -22,7 +22,7 @@
                     </li>
                     @endrole
                     @role('Loket|Superadmin')
-                    <li class="{{ request()->is('*/permohonan') ? 'active' : '' }}"><a href="{{ route('permohonan.create') }}"><i class="icon-user"></i> <span> Tambah Permohonan</span></a></li>
+                    <li class="{{ request()->is('loket/permohonan/create') ? 'active' : '' }}"><a href="{{ route('permohonan.create') }}"><i class="icon-user"></i> <span> Tambah Permohonan</span></a></li>
                     @endrole
                     <!-- /main -->
                 </ul>
