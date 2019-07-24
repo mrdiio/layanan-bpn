@@ -6,7 +6,7 @@ use App\Pemohon;
 use App\Tanggungan;
 use App\Tanah;
 use App\Permohonan;
-use Illuminate\Http\Request;
+use App\Http\Requests\PermohonanRequest;
 
 class PermohonanController extends Controller
 {
@@ -36,7 +36,7 @@ class PermohonanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PermohonanRequest $request)
     {   
         $pemohon = new Pemohon;
         $pemohon->nama = $request->nama;
@@ -52,18 +52,24 @@ class PermohonanController extends Controller
         $pemohon->no_hp = $request->no_hp;
         $pemohon->save();
         
-        if ($request->nama_tanggungan[0] !== null) {
+        if ($request->nama_tanggungan) {
             foreach($request->nama_tanggungan as $key => $value){
-                $tanggungan = [
-                    'pemohon_id' => $pemohon->id,
-                    'nama' => $value,
-                ];
-                $input_tanggungan[] = $tanggungan;
+                if ($value) {
+                    $tanggungan = [
+                        'nama' => $value,
+                        'pemohon_id' => $pemohon->id,
+                    ];
+                    $input_tanggungan[] = $tanggungan;
+                } else {
+                    $input_tanggungan[] = null;
+                }
             }
-            Tanggungan::insert($input_tanggungan);
+            if ($input_tanggungan) {
+                Tanggungan::insert($input_tanggungan);
+            }
         }
 
-        return back();
+        return back()->with('tambah', 'Sukses');
     }
 
     /**
