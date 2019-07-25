@@ -46,9 +46,9 @@
 			<div class="c-line-center c-theme-bg"></div>
 			<p class="c-center">Anda Dapat Melihat Status Permohonan Sertifikat Melalui Tabel Dibawah Ini</p>
 		</div>
-		
+		@if (count($hasil))
 		<div class="c-content-panel">
-			<div class="c-label">Status Permohonan Sertifikat</div>
+			<div class="c-label">Hasil pencarian : <b>{{$query}}</b></div>
 			<div class="c-body">
 				<div class="row">
 					<div class="col-md-12">
@@ -64,9 +64,9 @@
 							<tbody>
 							<tr>
 								<th scope="row">1</th>
-								<td>1122334455</td>
-								<td>Khairul</td>
-								<td>Petugas IP Turun Lapangan</td>
+								<td>{{ $hasil->nomor_pemohon}}</td>
+								<td>{{ $hasil->pemohon_id}}</td>
+								<td>{{ $hasil->status}}</td>
 							</tr>
 							</tbody>
 						</table>
@@ -74,6 +74,9 @@
 				</div>
 			</div>
 		</div>
+        @else
+            <div class="alert alert-danger" role="alert"><center>Oops.. Data <b>{{$query}}</b> Tidak Ditemukan</center></div>
+        @endif
     </div>
  </div>   
 <!-- END: PAGE CONTENT -->
