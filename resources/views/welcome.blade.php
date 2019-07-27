@@ -3,42 +3,11 @@
 @section('content')
 <!-- BEGIN: PAGE CONTENT -->
 
-<!-- BEGIN: LAYOUT/SLIDERS/REVO-SLIDER-4 -->
-<section class="c-layout-revo-slider c-layout-revo-slider-4" dir="ltr">
-    <div class="tp-banner-container c-theme">
-        <div class="tp-banner rev_slider" data-version="5.0">
-            <ul>
-                <!--BEGIN: SLIDE #1 -->
-                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000">
-                    <img 
-                        alt="" 
-                        src="{{asset('images/bpn.jpg')}}"
-                        data-bgposition="center center" 
-                        data-bgfit="cover" 
-                        data-bgrepeat="no-repeat"
-                        >   
-                    <div class="tp-caption customin customout"
-                        data-x="center" 
-                        data-y="center"
-                        data-hoffset="" 
-                        data-voffset="-50"
-                        data-speed="500" 
-                        data-start="1000" 
-                        data-transform_idle="o:1;" 
-                        data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;" 
-                        data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;" 
-                        data-splitin="none" 
-                        data-splitout="none" 
-                        data-elementdelay="0.1" 
-                        data-endelementdelay="0.1" 
-                        data-endspeed="1200">
-                    </div>
-                </li>
-                <!--END -->  
-            </ul>
-        </div>
+<!-- BEGIN: LAYOUT/BREADCRUMBS/BREADCRUMBS-4 -->
+<div class="c-layout-breadcrumbs-1 c-bgimage-full  c-centered  c-fonts-uppercase c-fonts-bold   c-bg-img-center" style="background-image: url(images/bpn.jpg)">
+    <div class="container" style="height:90px">
     </div>
-</section><!-- END: LAYOUT/SLIDERS/REVO-SLIDER-4 -->
+</div>
 <!-- BEGIN: CONTENT/BARS/BAR-3 -->
 <div class="c-content-box c-size-md c-bg-dark">
     <div class="container">

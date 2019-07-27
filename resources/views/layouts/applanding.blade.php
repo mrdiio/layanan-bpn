@@ -15,8 +15,6 @@
 </head>
 
 <body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen">
-    @include('layouts.partsfront.header')
-        
     <!-- BEGIN: PAGE CONTAINER -->
     <div class="c-layout-page">
         @yield('content')	
