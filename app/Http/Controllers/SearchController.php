@@ -11,7 +11,8 @@ class SearchController extends Controller
     public function search(Request $request)
     {
         $query = $request->get('nomor_pemohon');
-        $hasil = Permohonan::where('nomor_pemohon', $request->nomor_pemohon)->get();
+        $hasil = Permohonan::where('nomor_pemohon', $request->nomor_pemohon)->first();
+        // return $hasil;
         return view('search-result', compact('hasil', 'query'));
     }
 

@@ -3,11 +3,7 @@
 @section('content')
 <!-- BEGIN: PAGE CONTENT -->
 
-<!-- BEGIN: LAYOUT/BREADCRUMBS/BREADCRUMBS-4 -->
-<div class="c-layout-breadcrumbs-1 c-bgimage-full  c-centered  c-fonts-uppercase c-fonts-bold   c-bg-img-center" style="background-image: url(images/bpn.jpg)">
-    <div class="container" style="height:90px">
-    </div>
-</div>
+@include('layouts.partsfront.breadcumb')
 <!-- BEGIN: CONTENT/BARS/BAR-3 -->
 <div class="c-content-box c-size-md c-bg-dark">
     <div class="container">
