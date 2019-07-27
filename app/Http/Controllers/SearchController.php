@@ -11,8 +11,7 @@ class SearchController extends Controller
     public function search(Request $request)
     {
         $query = $request->get('nomor_pemohon');
-        $hasil = Permohonan::where('nomor_pemohon', 'LIKE', '%' . $query . '%')->first();
-
+        $hasil = Permohonan::where('nomor_pemohon', $request->nomor_pemohon)->get();
         return view('search-result', compact('hasil', 'query'));
     }
 

@@ -31,7 +31,7 @@
                         data-splitout="none" 
                         data-elementdelay="0.1" 
                         data-endelementdelay="0.1" 
-                        data-endspeed="600">
+                        data-endspeed="1200">
                     </div>
                 </li>
                 <!--END -->  
@@ -50,7 +50,7 @@
                 <form class="c-shop-advanced-search-1" action="{{ url('cari') }}" method="GET">
                     <div class="row">
                         <div class="col-md-4">
-                            <input class="form-control  c-square c-theme input-lg" type="text"name="nomor_pemohon" placeholder="Masukkan Nomor Pemohon" required>
+                            <input class="form-control  c-square c-theme input-lg" type="text" name="nomor_pemohon" placeholder="Masukkan Nomor Pemohon" required>
                         </div>
                         <div class="form-group col-md-1">
                             <span class="input-group-btn">

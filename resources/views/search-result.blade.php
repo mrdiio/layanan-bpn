@@ -65,7 +65,7 @@
 							<tr>
 								<th scope="row">1</th>
 								<td>{{ $hasil->nomor_pemohon}}</td>
-								<td>{{ $hasil->pemohon_id}}</td>
+								<td>{{ $hasil->pemohon->nama}}</td>
 								<td>{{ $hasil->status}}</td>
 							</tr>
 							</tbody>
