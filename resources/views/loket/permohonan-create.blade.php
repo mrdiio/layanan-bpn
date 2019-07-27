@@ -24,6 +24,132 @@
 
         <form class="stepy-validation form-horizontal" id="form" action="{{ route('permohonan.store') }}" method="post">
         @csrf
+            <fieldset title="2">
+                <legend class="text-semibold">Tanah</legend>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3">1. Letak Tanah : </label>
+                    <div class="col-md-9">
+                        <label class="control-label col-md-2">Jalan</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <label class="control-label col-md-2">Desa</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <label class="control-label col-md-2">Kecamatan</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <label class="control-label col-md-2">Kabupaten</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-md-3">2. Luasnya : </label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3">3. Batas-batasnya : </label>
+                    <div class="col-md-9">
+                        <label class="control-label col-md-2">Utara</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <label class="control-label col-md-2">Timur</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <label class="control-label col-md-2">Barat</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <label class="control-label col-md-2">Selatan</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3">4. Status Tanah : </label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control">
+
+                        <label class="control-label col-md-3">(Hak yang melekat di atas tanah)</label>
+                        <div class="col-md-3">
+                            <select name="" id="" class="select">
+                                <option selected disabled hidden></option>
+                                <option>SKPT</option>
+                                <option>Ketitir</option>
+                                <option>Surat Pernyataan Tanah</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="control-label col-md-3">Tgl.</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="control-label col-md-3">No.</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3">5. Jenis dan Keadaan Tanah : </label>
+                    <div class="col-md-9">
+                        <label class="radio-inline">
+                            <input type="radio" name="jenis_tanah" value=" Belum Menikah">
+                            Perumahan
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="jenis_tanah" value="Suami">
+                            Pertanian
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3">6. Dasar Penguasaan : </label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3">7. Rencana Penggunaan : </label>
+                    <div class="col-md-9">
+                        <label class="radio-inline">
+                            <input type="radio" name="jenis_tanah" value=" Belum Menikah">
+                            Perumahan
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="jenis_tanah" value="Suami">
+                            Pertanian
+                        </label>
+                    </div>
+                </div>
+        
+            </fieldset>
+
             <fieldset title="1">
                 <legend class="text-semibold">Data pemohon</legend>
 
@@ -111,23 +237,10 @@
                     </div>
                     
                 </div>
-
+                
             </fieldset>
-
-            <fieldset title="2">
-                <legend class="text-semibold">Tanah</legend>
-
-                <div class="form-group">
-                    <label class="control-label col-md-2">Letak Tanah</label>
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" placeholder="Jalan">
-                    </div>
-                    <div class="col-md-1">
-                        <input type="text" class="form-control" placeholder="Desa">
-                    </div>
-                </div>
-        
-            </fieldset>
+            
+            
 
             <button type="submit" class="btn btn-primary stepy-finish add">Submit <i class="icon-check position-right"></i></button>
         </form>
@@ -138,12 +251,12 @@
 @endsection
 
 @push('js')
-<script type="text/javascript" src="{{ asset('js/plugins/forms/wizards/stepy.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/forms/selects/select2.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/forms/styling/uniform.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/core/libraries/jasny_bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/pages/form_layouts.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/forms/validation/validate.min.js') }}"></script>
 
+<script type="text/javascript" src="{{ asset('js/plugins/forms/wizards/stepy.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pages/wizard_stepy.js') }}"></script>
 
 <script type="text/javascript">
