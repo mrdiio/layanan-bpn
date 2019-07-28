@@ -35,17 +35,19 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
 Route::group(['prefix' => 'loket', 'middleware' => 'role:Loket|Superadmin'], function () {
     Route::resource('dashboard', 'loket\DashboardController')->names(['index' => 'loket.dashboard']);
-    Route::resource('permohonan', 'PermohonanController');
+    Route::resource('permohonan', 'PermohonanController')->names(['index' => 'loket.permohonan']);;
 });
 
-Route::group(['prefix' => 'ip', 'middleware' => 'role:IP|Superadmin'], function () {
-    Route::resource('dashboard', 'IP\DashboardController')->names(['index' => 'ip.dashboard']);
+Route::group(['prefix' => 'ip', 'middleware' => 'role:IP|Superadmin','as' => 'ip.'], function () {
+    Route::resource('dashboard', 'IP\DashboardController');
+    Route::resource('permohonan', 'IPController');
 });
 
-Route::group(['prefix' => 'p2', 'middleware' => 'role:P2|Superadmin'], function () {
-    Route::resource('dashboard', 'P2\DashboardController')->names(['index' => 'p2.dashboard']);
+Route::group(['prefix' => 'p2', 'middleware' => 'role:P2|Superadmin','as' => 'p2.'], function () {
+    Route::resource('dashboard', 'P2\DashboardController');
+    Route::resource('permohonan', 'P2Controller');
 });
 
-Route::group(['prefix' => 'hhp', 'middleware' => 'role:HHP|Superadmin'], function () {
-    Route::resource('dashboard', 'HHP\DashboardController')->names(['index' => 'hhp.dashboard']);
-});
+// Route::group(['prefix' => 'hhp', 'middleware' => 'role:HHP|Superadmin'], function () {
+//     Route::resource('dashboard', 'HHP\DashboardController')->names(['index' => 'hhp.dashboard']);
+// });
