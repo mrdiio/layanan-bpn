@@ -31,10 +31,10 @@ class HomeController extends Controller
             return redirect()->route('loket.dashboard');
         } 
         elseif ($user->hasRole('IP')) {
-            return redirect()->route('ip.dashboard');
+            return redirect()->route('ip.dashboard.index');
         } 
         elseif ($user->hasRole('P2')) {
-            return redirect()->route('p2.dashboard');
+            return redirect()->route('p2.dashboard.index');
         } 
         elseif ($user->hasRole('HHP')) {
             return redirect()->route('hhp.dashboard');
