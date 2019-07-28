@@ -29,7 +29,17 @@ class HomeController extends Controller
             return redirect()->route('admin.dashboard');
         } elseif ($user->hasRole('Loket')) {
             return redirect()->route('loket.dashboard.index');
-        } else {
+        } 
+        elseif ($user->hasRole('IP')) {
+            return redirect()->route('ip.dashboard.index');
+        } 
+        elseif ($user->hasRole('P2')) {
+            return redirect()->route('p2.dashboard.index');
+        } 
+        elseif ($user->hasRole('HHP')) {
+            return redirect()->route('hhp.dashboard');
+        } 
+        else {
             return 'forbidden';
         }
     }

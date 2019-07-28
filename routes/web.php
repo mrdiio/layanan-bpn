@@ -37,3 +37,17 @@ Route::group(['prefix' => 'loket', 'middleware' => 'role:Loket|Superadmin', 'as'
     Route::resource('dashboard', 'loket\DashboardController');
     Route::resource('permohonan', 'PermohonanController');
 });
+
+Route::group(['prefix' => 'ip', 'middleware' => 'role:IP|Superadmin','as' => 'ip.'], function () {
+    Route::resource('dashboard', 'IP\DashboardController');
+    Route::resource('permohonan', 'IPController');
+});
+
+Route::group(['prefix' => 'p2', 'middleware' => 'role:P2|Superadmin','as' => 'p2.'], function () {
+    Route::resource('dashboard', 'P2\DashboardController');
+    Route::resource('permohonan', 'P2Controller');
+});
+
+// Route::group(['prefix' => 'hhp', 'middleware' => 'role:HHP|Superadmin'], function () {
+//     Route::resource('dashboard', 'HHP\DashboardController')->names(['index' => 'hhp.dashboard']);
+// });
