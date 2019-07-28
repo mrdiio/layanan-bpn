@@ -89,6 +89,10 @@ class PermohonanController extends Controller
         $tanah->rencana_penggunaan = $request->rencana_penggunaan;
         $tanah->save();
 
+        $permohonan = new Permohonan;
+        
+        $permohonan->save();
+
         return back()->with('tambah', 'Sukses');
     }
 
