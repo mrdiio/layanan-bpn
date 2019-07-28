@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Loket;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Permohonan;
 
 class DashboardController extends Controller
 {
@@ -14,7 +15,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('loket.dashboard');
+        $permohonan = Permohonan::all();
+        return view('loket.dashboard', compact('permohonan'));
     }
 
     /**

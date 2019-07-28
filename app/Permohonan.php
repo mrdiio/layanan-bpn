@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Permohonan extends Model
 {
-    public function pemohon (){
+    public function pemohon(){
         return $this->belongsTo(Pemohon::class);
+    }
+
+    public function tanah(){
+        return $this->belongsTo(Tanah::class);
     }
 }

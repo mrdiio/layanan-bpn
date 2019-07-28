@@ -107,7 +107,7 @@ class PermohonanController extends Controller
      */
     public function show(Permohonan $permohonan)
     {
-        //
+        return view('loket.permohonan-show', compact('permohonan'));
     }
 
     /**

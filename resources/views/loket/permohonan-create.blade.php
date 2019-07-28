@@ -22,7 +22,7 @@
             </div>
         @endif
 
-        <form class="stepy-validation form-horizontal" id="form" action="{{ route('permohonan.store') }}" method="post">
+        <form class="stepy-validation form-horizontal" id="form" action="{{ route('loket.permohonan.store') }}" method="post">
         @csrf
             <fieldset title="1">
                 <legend class="text-semibold">Data pemohon</legend>

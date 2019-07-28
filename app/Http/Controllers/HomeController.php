@@ -28,7 +28,7 @@ class HomeController extends Controller
         if ($user->hasanyrole('Admin|Superadmin')) {
             return redirect()->route('admin.dashboard');
         } elseif ($user->hasRole('Loket')) {
-            return redirect()->route('loket.dashboard');
+            return redirect()->route('loket.dashboard.index');
         } else {
             return 'forbidden';
         }
