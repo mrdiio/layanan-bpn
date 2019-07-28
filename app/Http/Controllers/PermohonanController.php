@@ -90,7 +90,10 @@ class PermohonanController extends Controller
         $tanah->save();
 
         $permohonan = new Permohonan;
-        
+        $permohonan->pemohon_id = $pemohon->id;
+        $permohonan->tanah_id = $tanah->id;
+        $permohonan->nomor_pemohon = time();
+        $permohonan->status = 1;
         $permohonan->save();
 
         return back()->with('tambah', 'Sukses');
