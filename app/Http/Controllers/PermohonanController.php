@@ -69,6 +69,26 @@ class PermohonanController extends Controller
             }
         }
 
+        $tanah = new Tanah;
+        $tanah->pemohon_id = $pemohon->id;
+        $tanah->jalan = $request->jalan;
+        $tanah->desa = $request->desa;
+        $tanah->kecamatan = $request->kecamatan;
+        $tanah->kabupaten = $request->kabupaten;
+        $tanah->luas = $request->luas;
+        $tanah->batas_utara = $request->batas_utara;
+        $tanah->batas_timur = $request->batas_timur;
+        $tanah->batas_selatan = $request->batas_selatan;
+        $tanah->batas_barat = $request->batas_barat;
+        $tanah->status_tanah = $request->status_tanah;
+        $tanah->hak_tanah = $request->hak_tanah;
+        $tanah->tanggal_haktanah = $request->tanggal_haktanah;
+        $tanah->nomor_haktanah = $request->nomor_haktanah;
+        $tanah->jenis_tanah = $request->jenis_tanah;
+        $tanah->dasar_penguasaan = $request->dasar_penguasaan;
+        $tanah->rencana_penggunaan = $request->rencana_penggunaan;
+        $tanah->save();
+
         return back()->with('tambah', 'Sukses');
     }
 
