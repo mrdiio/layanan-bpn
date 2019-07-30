@@ -36,11 +36,12 @@ class CreatePermohonansTable extends Migration
             $table->boolean('bayar_ptpgt')->default(0);
             $table->string('file_peta_bidang')->nullable();
             $table->string('file_ptpgt')->nullable();
-            $table->string('status');
+            $table->unsignedBigInteger('status_id');
             $table->timestamps();
             
             $table->foreign('pemohon_id')->references('id')->on('pemohons')->onDelete('cascade');
             $table->foreign('tanah_id')->references('id')->on('tanahs')->onDelete('cascade');
+            $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade');
         });
     }
 

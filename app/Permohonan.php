@@ -13,4 +13,8 @@ class Permohonan extends Model
     public function tanah(){
         return $this->belongsTo(Tanah::class);
     }
+
+    public function status(){
+        return $this->belongsTo(Status::class);
+    }
 }

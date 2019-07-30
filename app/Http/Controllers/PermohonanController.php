@@ -93,10 +93,11 @@ class PermohonanController extends Controller
         $permohonan->pemohon_id = $pemohon->id;
         $permohonan->tanah_id = $tanah->id;
         $permohonan->nomor_pemohon = time();
-        $permohonan->status = 1;
+        $permohonan->status_id = 1;
         $permohonan->save();
 
-        return back()->with('tambah', 'Sukses');
+        // return back()->with('tambah', 'Sukses');
+        return redirect()->action('PermohonanController@show', $permohonan->id)->with('tambah', 'Sukses');
     }
 
     /**

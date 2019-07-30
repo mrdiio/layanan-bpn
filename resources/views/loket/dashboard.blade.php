@@ -26,7 +26,7 @@
                             <td>{{ $loop->iteration }}</td>
                             <td><a href="{{ route('loket.permohonan.show', $item->id) }}">{{ $item->nomor_pemohon }}</a></td>
                             <td><a href="">{{ $item->pemohon->nama }}</a></td>
-                            <td>{{ $item->status }}</td>
+                            <td>{{ $item->status->name }}</td>
                             <td class="text-center">
                                 <ul class="icons-list">
                                     <li class="dropdown">
