@@ -7,23 +7,22 @@
 @section('content')
 <div class="row">
     <div class="col-md-6">
-        <div class="panel panel-flat">
-            <div class="panel-heading">
+        <div class="panel panel-white">
+            {{-- <div class="panel-heading">
                 <h5 class="panel-title text-semibold">No. Pemohon : {{ $permohonan->nomor_pemohon }}</h5>
-                <small class="text-muted">
-                    <span class="text-semibold">Status:</span> {{ $permohonan->status->nama }} 
-                </small>
                 <div class="heading-elements">
                     <ul class="icons-list">
                         <li><a data-action="collapse"></a></li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
             
             <div class="panel-body">
+                <h5 class="text-semibold">No. Pemohon : {{ $permohonan->nomor_pemohon }}</h5>
+                <h5 class="text-semibold">Status : {{ $permohonan->status->nama }}</h5>
                 <form class="form-horizontal">
                     <fieldset class="content-group">
-                        <legend class="text-bold">Persyaratan</legend>
+                        <legend class="text-bold">Persyaratan :</legend>
 
                         <div class="form-group">
                             <label class="control-label col-md-3">1. FC KTP <span class="pull-right">:</span></label>
