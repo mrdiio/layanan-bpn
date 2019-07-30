@@ -207,11 +207,11 @@
                     <label class="control-label col-md-3">5. Jenis dan Keadaan Tanah : </label>
                     <div class="col-md-9">
                         <label class="radio-inline">
-                            <input type="radio" name="jenis_tanah" value=" Belum Menikah">
+                            <input type="radio" name="jenis_tanah" value="Perumahan">
                             Perumahan
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="jenis_tanah" value="Suami">
+                            <input type="radio" name="jenis_tanah" value="Pertanian">
                             Pertanian
                         </label>
                     </div>
@@ -228,11 +228,11 @@
                     <label class="control-label col-md-3">7. Rencana Penggunaan : </label>
                     <div class="col-md-9">
                         <label class="radio-inline">
-                            <input type="radio" name="rencana_penggunaan" value=" Belum Menikah">
+                            <input type="radio" name="rencana_penggunaan" value="Perumahan">
                             Perumahan
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="rencana_penggunaan" value="Suami">
+                            <input type="radio" name="rencana_penggunaan" value="Pertanian">
                             Pertanian
                         </label>
                     </div>
