@@ -4,6 +4,8 @@ namespace App\Http\Controllers\IP;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Permohonan;
+use App\Status;
 
 class DashboardController extends Controller
 {
@@ -14,7 +16,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view ('ip.dashboard');
+        $prapengukuran = Permohonan::where('status_id','2','desc')->get();
+        $pengukuran = Permohonan::where('status_id','3','desc')->get();
+        $masukp2 = Permohonan::where('status_id','4','desc')->get();
+
+        return view('ip.dashboard',compact('prapengukuran','pengukuran','masukp2'));
     }
 
     /**
