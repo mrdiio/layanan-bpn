@@ -52,7 +52,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h5 class="modal-title">Ubah Status</h5>
             </div>
-            <form role="form" method="POST" action="/ip/permohonan/{{$edit->id_resep}}" enctype="multipart/form-data">
+            <form role="form" method="POST" action="/ip/permohonan/{{$edit->id}}" enctype="multipart/form-data">
                 {{method_field('PUT')}}
                 {{ csrf_field() }}
                 <div class="modal-body">
