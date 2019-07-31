@@ -77,7 +77,7 @@ class IPController extends Controller
         $permohonan->status_id = $request->status_id;
 
         $permohonan->save();
-  
+
         return redirect()->action('IPController@create');
     }
 

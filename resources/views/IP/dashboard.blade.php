@@ -46,6 +46,41 @@
         <!-- /basic datatable -->
     </div>
 </div>
+@foreach($prapengukuran as $edit)
+<div class="modal fade" id="update{{$edit->id}}" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Ubah Status</h5>
+            </div>
+            <form role="form" method="POST" action="/ip/dashboard/{{$edit->id}}" enctype="multipart/form-data">
+                {{method_field('PUT')}}
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Status</label>
+                        <div class="col-lg-9">
+                            <select class="select" name="status_id" class="form-control" required>
+                                <option></option>
+                                @foreach($status as $s)
+                                <option value="{{ $s->id }}" {{ $edit->status_id == $s->id ? 'selected' : '' }}> {{ $s->nama}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary pull-right">Simpan</button>
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@endforeach
+
 <div class="row">
     <div class="col-md-12">
         <!-- Basic datatable -->
@@ -76,48 +111,17 @@
                             <td>{{ $data->pemohon->no_hp }}</td>
                             <td>{{ $data->status->nama }}</td>
                             <td class="text-center">
-                                <a type="button" role="button"  data-toggle="modal" data-target="#update{{$data->id}}" class="btn btn-success btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah Status</a>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <!-- /basic datatable -->
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <!-- Basic datatable -->
-        <div class="panel panel-flat">
-            <div class="panel-heading">
-                <h5 class="panel-title">Upload Peta Bidang dan Masuk P2</h5>
-            </div>
-            <div class="table-responsive">
-                <table class="table datatable-basic">
-                    <thead>
-                        <tr>
-                            <th width=5%>#</th>
-                            <th>Nomor Pemohon</th>
-                            <th>Nama</th>
-                            <th>Alamat</th>
-                            <th>Kontak</th>
-                            <th>Status</th>
-                            <th class="text-center" width=15%>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($pengukuran as $data)
-                        <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data->nomor_pemohon }}</td>
-                            <td>{{ $data->pemohon->nama }}</td>
-                            <td>{{ $data->pemohon->alamat }}</td>
-                            <td>{{ $data->pemohon->no_hp }}</td>
-                            <td>{{ $data->status->nama }}</td>
-                            <td class="text-center">
-                                <a type="button" role="button"  data-toggle="modal" data-target="#update{{$data->id}}" class="btn btn-success btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah Status</a>
+                                <ul class="icons-list">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="icon-menu9"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-right">              
+                                            <li><a href="#" ><i class="icon-file-upload"></i> Upload Peta Bidang</a></li>
+                                            <li><a type="button" role="button"  data-toggle="modal" data-target="#update{{$data->id}}"><i class="icon-pencil7"></i> Ubah Status</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </td>
                         </tr>
                         @endforeach
