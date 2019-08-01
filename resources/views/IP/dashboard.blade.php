@@ -46,6 +46,7 @@
         <!-- /basic datatable -->
     </div>
 </div>
+
 @foreach($prapengukuran as $edit)
 <div class="modal fade" id="update{{$edit->id}}" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-md" role="document">
@@ -117,7 +118,7 @@
                                             <i class="icon-menu9"></i>
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-right">              
-                                            <li><a href="#" ><i class="icon-file-upload"></i> Upload Peta Bidang</a></li>
+                                            <li><a type="button" role="button"  data-toggle="modal" data-target="#peta{{$data->id}}"><i class="icon-file-upload"></i> Upload Peta Bidang</a></li>
                                             <li><a type="button" role="button"  data-toggle="modal" data-target="#update{{$data->id}}"><i class="icon-pencil7"></i> Ubah Status</a></li>
                                         </ul>
                                     </li>
@@ -132,6 +133,36 @@
         <!-- /basic datatable -->
     </div>
 </div>
+
+@foreach($pengukuran as $peta)
+<div class="modal fade" id="peta{{$peta->id}}" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Upload Peta Bidang</h5>
+            </div>
+            <form role="form" method="POST" action="/ip/dashboard/{{$peta->id}}" enctype="multipart/form-data">
+                {{method_field('PUT')}}
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="col-lg-9">
+                            <input type="file" class="form-control" name="file_peta_bidang">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary pull-right">Simpan</button>
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@endforeach
+
 @endsection
 
 @push('js')

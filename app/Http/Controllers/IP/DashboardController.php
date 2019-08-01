@@ -79,7 +79,7 @@ class DashboardController extends Controller
         $prapengukuran = Permohonan::find($id);
         $prapengukuran->status_id = $request->status_id;
 
-        $prapengukuran->save();
+        $prapengukuran->update();
 
         return redirect()->action('IP\DashboardController@index');
     }
