@@ -17,9 +17,10 @@ class DashboardController extends Controller
     public function index()
     {
         $aspek = Permohonan::where('status_id','5','desc')->get();
+        $pembayaran = Permohonan::where('status_id','6','desc')->get();
         $status = Status::orderBy('id','asc')->get();
 
-        return view('p2.dashboard',compact('aspek','status'));
+        return view('p2.dashboard',compact('aspek','status','pembayaran'));
     }
 
     /**
@@ -77,6 +78,10 @@ class DashboardController extends Controller
         $aspek = Permohonan::find($id);
         $aspek->status_id = $request->status_id;
         $aspek->update();
+
+        $pembayaran = Permohonan::find($id);
+        $pembayaran->status_id = $request->status_id;
+        $pembayaran->update();
 
         return redirect()->action('P2\DashboardController@index');
     }

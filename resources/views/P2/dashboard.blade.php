@@ -55,7 +55,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h5 class="modal-title">Ubah Status</h5>
             </div>
-            <form role="form" method="POST" action="/ip/dashboard/{{$edit->id}}" enctype="multipart/form-data">
+            <form role="form" method="POST" action="/p2/dashboard/{{$edit->id}}" enctype="multipart/form-data">
                 {{method_field('PUT')}}
                 {{ csrf_field() }}
                 <div class="modal-body">
@@ -82,7 +82,7 @@
 </div>
 @endforeach
 
-{{-- <div class="row">
+<div class="row">
     <div class="col-md-12">
         <!-- Basic datatable -->
         <div class="panel panel-flat">
@@ -137,7 +137,6 @@
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="form-group">
-                        
                         <label class="col-lg-3 control-label">Status</label>
                         <div class="col-lg-9">
                             <select class="select" name="status_id" class="form-control" required>
@@ -158,7 +157,7 @@
         </div>
     </div>
 </div>
-@endforeach --}}
+@endforeach
 
 @endsection
 
