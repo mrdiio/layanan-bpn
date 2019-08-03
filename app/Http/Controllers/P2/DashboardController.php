@@ -4,6 +4,8 @@ namespace App\Http\Controllers\P2;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Permohonan;
+use App\Status;
 
 class DashboardController extends Controller
 {
@@ -14,7 +16,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view ('p2.dashboard');
+        $aspek = Permohonan::where('status_id','5','desc')->get();
+        $status = Status::orderBy('id','asc')->get();
+
+        return view('p2.dashboard',compact('aspek','status'));
     }
 
     /**
@@ -69,7 +74,11 @@ class DashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $aspek = Permohonan::find($id);
+        $aspek->status_id = $request->status_id;
+        $aspek->update();
+
+        return redirect()->action('P2\DashboardController@index');
     }
 
     /**

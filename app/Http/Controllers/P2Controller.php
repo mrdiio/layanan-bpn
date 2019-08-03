@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Permohonan;
+use App\Status;
 
 class P2Controller extends Controller
 {
@@ -13,7 +15,7 @@ class P2Controller extends Controller
      */
     public function index()
     {
-        //
+        return view('p2.dashboard');
     }
 
     /**
@@ -23,7 +25,10 @@ class P2Controller extends Controller
      */
     public function create()
     {
-        return view('p2.permohonan-create');
+        $permohonan = Permohonan::where('status_id','4','desc')->get();
+        $status = Status::orderBy('id','asc')->get();
+
+        return view('p2.permohonan-create',compact('permohonan','status'));
     }
 
     /**
@@ -68,7 +73,12 @@ class P2Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $permohonan = Permohonan::find($id);
+        $permohonan->status_id = $request->status_id;
+
+        $permohonan->save();
+
+        return redirect()->action('P2Controller@create');
     }
 
     /**

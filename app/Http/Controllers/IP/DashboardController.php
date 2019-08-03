@@ -78,8 +78,17 @@ class DashboardController extends Controller
     {
         $prapengukuran = Permohonan::find($id);
         $prapengukuran->status_id = $request->status_id;
-
         $prapengukuran->update();
+
+        $pengukuran = Permohonan::find($id);
+        if ($request->has('file_peta_bidang')) {
+            $i = $request->file('file_peta_bidang');
+            $filename = $pengukuran->id.'.'.$i->getClientOriginalExtension();
+            $i->move(public_path('images/peta_bidang/'),$filename);
+            $pengukuran->file_peta_bidang = $filename;
+        }
+        $pengukuran->status_id = $request->status_id;
+        $pengukuran->update();
 
         return redirect()->action('IP\DashboardController@index');
     }

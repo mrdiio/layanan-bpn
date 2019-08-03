@@ -112,17 +112,7 @@
                             <td>{{ $data->pemohon->no_hp }}</td>
                             <td>{{ $data->status->nama }}</td>
                             <td class="text-center">
-                                <ul class="icons-list">
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            <i class="icon-menu9"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-menu-right">              
-                                            <li><a type="button" role="button"  data-toggle="modal" data-target="#peta{{$data->id}}"><i class="icon-file-upload"></i> Upload Peta Bidang</a></li>
-                                            <li><a type="button" role="button"  data-toggle="modal" data-target="#update{{$data->id}}"><i class="icon-pencil7"></i> Ubah Status</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                <a type="button" role="button"  data-toggle="modal" data-target="#peta{{$data->id}}" class="btn btn-success btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah Data</a>
                             </td>
                         </tr>
                         @endforeach
@@ -147,6 +137,17 @@
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="form-group">
+                        
+                        <label class="col-lg-3 control-label">Status</label>
+                        <div class="col-lg-9">
+                            <select class="select" name="status_id" class="form-control" required>
+                                <option></option>
+                                @foreach($status as $s)
+                                <option value="{{ $s->id }}" {{ $peta->status_id == $s->id ? 'selected' : '' }}> {{ $s->nama}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <label class="col-lg-3 control-label">Peta Bidang</label>
                         <div class="col-lg-9">
                             <input type="file" class="form-control" name="file_peta_bidang">
                         </div>
