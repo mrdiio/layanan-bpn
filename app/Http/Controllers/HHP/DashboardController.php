@@ -4,6 +4,8 @@ namespace App\Http\Controllers\HHP;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Permohonan;
+use App\Status;
 
 class DashboardController extends Controller
 {
@@ -14,7 +16,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view ('hhp.dashboard');
+        $petugasA = Permohonan::where('status_id','9','desc')->get();
+        $publikasi = Permohonan::where('status_id','10','desc')->get();
+        $pencetakan = Permohonan::where('status_id','11','desc')->get();
+        $dicetak = Permohonan::where('status_id','12','desc')->get();
+        $selesai = Permohonan::where('status_id','13','desc')->get();
+        $status = Status::orderBy('id','asc')->get();
+
+        return view('hhp.dashboard',compact('petugasA','publikasi','pencetakan','dicetak','selesai','status'));
     }
 
     /**
@@ -69,7 +78,27 @@ class DashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $petugasA = Permohonan::find($id);
+        $petugasA->status_id = $request->status_id;
+        $petugasA->update();
+
+        $publikasi = Permohonan::find($id);
+        $publikasi->status_id = $request->status_id;
+        $publikasi->update();
+
+        $pencetakan = Permohonan::find($id);
+        $pencetakan->status_id = $request->status_id;
+        $pencetakan->update();
+
+        $dicetak = Permohonan::find($id);
+        $dicetak->status_id = $request->status_id;
+        $dicetak->update();
+
+        $selesai = Permohonan::find($id);
+        $selesai->status_id = $request->status_id;
+        $selesai->update();
+
+        return redirect()->action('HHP\DashboardController@index');
     }
 
     /**

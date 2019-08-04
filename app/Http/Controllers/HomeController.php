@@ -37,7 +37,7 @@ class HomeController extends Controller
             return redirect()->route('p2.dashboard.index');
         } 
         elseif ($user->hasRole('HHP')) {
-            return redirect()->route('hhp.dashboard');
+            return redirect()->route('hhp.dashboard.index');
         } 
         else {
             return 'forbidden';

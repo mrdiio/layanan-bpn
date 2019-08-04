@@ -25,10 +25,13 @@
                     <li class="{{ request()->is('loket/permohonan/create') ? 'active' : '' }}"><a href="{{ route('loket.permohonan.create') }}"><i class="icon-user"></i> <span> Tambah Permohonan</span></a></li>
                     @endrole
                     @role('IP|Superadmin')
-                    <li class="{{ request()->is('ip/permohonan/create') ? 'active' : '' }}"><a href="{{ route('ip.permohonan.create') }}"><i class="icon-user"></i> <span> Tabel Permohonan</span></a></li>
+                    <li class="{{ request()->is('ip/permohonan/create') ? 'active' : '' }}"><a href="{{ route('ip.permohonan.create') }}"><i class="icon-user"></i> <span> Permohonan Masuk</span></a></li>
                     @endrole
                     @role('P2|Superadmin')
-                    <li class="{{ request()->is('p2/permohonan/create') ? 'active' : '' }}"><a href="{{ route('p2.permohonan.create') }}"><i class="icon-user"></i> <span> Tabel Permohonan</span></a></li>
+                    <li class="{{ request()->is('p2/permohonan/create') ? 'active' : '' }}"><a href="{{ route('p2.permohonan.create') }}"><i class="icon-user"></i> <span> Permohonan Masuk</span></a></li>
+                    @endrole
+                    @role('HHP|Superadmin')
+                    <li class="{{ request()->is('hhp/permohonan/create') ? 'active' : '' }}"><a href="{{ route('hhp.permohonan.create') }}"><i class="icon-user"></i> <span> Permohonan Masuk</span></a></li>
                     @endrole
                     <!-- /main -->
                 </ul>

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Permohonan;
 use Illuminate\Http\Request;
+use App\Permohonan;
+use App\Status;
 
 class SearchController extends Controller
 {
@@ -12,8 +13,9 @@ class SearchController extends Controller
     {
         $query = $request->get('nomor_pemohon');
         $hasil = Permohonan::where('nomor_pemohon', $request->nomor_pemohon)->first();
+        $status = Status::first();
         // return $hasil;
-        return view('search-result', compact('hasil', 'query'));
+        return view('search-result', compact('hasil', 'query','status'));
     }
 
     public function create()

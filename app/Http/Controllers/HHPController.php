@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\P2;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Permohonan;
 use App\Status;
 
-class DashboardController extends Controller
+class HHPController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +15,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $aspek = Permohonan::where('status_id','5','desc')->get();
-        $pembayaran = Permohonan::where('status_id','6','desc')->get();
-        $ptpgt = Permohonan::where('status_id','7','desc')->get();
-
-        $status = Status::orderBy('id','asc')->get();
-
-        return view('p2.dashboard',compact('aspek','status','pembayaran','ptpgt'));
+        return view('hhp.dashboard');
     }
 
     /**
@@ -32,10 +25,13 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        $permohonan = Permohonan::where('status_id','8','desc')->get();
+        $status = Status::orderBy('id','asc')->get();
+
+        return view('hhp.permohonan-create',compact('permohonan','status'));
     }
 
-    /**
+    /*
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -77,25 +73,12 @@ class DashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $aspek = Permohonan::find($id);
-        $aspek->status_id = $request->status_id;
-        $aspek->update();
+        $permohonan = Permohonan::find($id);
+        $permohonan->status_id = $request->status_id;
 
-        $pembayaran = Permohonan::find($id);
-        $pembayaran->status_id = $request->status_id;
-        $pembayaran->update();
+        $permohonan->save();
 
-        $ptpgt = Permohonan::find($id);
-        if ($request->has('file_ptpgt')) {
-            $i = $request->file('file_ptpgt');
-            $filename = $ptpgt->nomor_pemohon.'_ptpgt'.'.'.$i->getClientOriginalExtension();
-            $i->move(public_path('images/pt_pgt/'),$filename);
-            $ptpgt->file_ptpgt = $filename;
-        }
-        $ptpgt->status_id = $request->status_id;
-        $ptpgt->update();
-
-        return redirect()->action('P2\DashboardController@index');
+        return redirect()->action('HHPController@create');
     }
 
     /**

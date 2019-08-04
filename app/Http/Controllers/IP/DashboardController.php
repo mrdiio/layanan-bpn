@@ -83,7 +83,7 @@ class DashboardController extends Controller
         $pengukuran = Permohonan::find($id);
         if ($request->has('file_peta_bidang')) {
             $i = $request->file('file_peta_bidang');
-            $filename = $pengukuran->id.'.'.$i->getClientOriginalExtension();
+            $filename = $pengukuran->nomor_pemohon.'_petabidang'.'.'.$i->getClientOriginalExtension();
             $i->move(public_path('images/peta_bidang/'),$filename);
             $pengukuran->file_peta_bidang = $filename;
         }

@@ -47,3 +47,8 @@ Route::group(['prefix' => 'p2', 'middleware' => 'role:P2|Superadmin','as' => 'p2
     Route::resource('dashboard', 'P2\DashboardController');
     Route::resource('permohonan', 'P2Controller');
 });
+
+Route::group(['prefix' => 'hhp', 'middleware' => 'role:HHP|Superadmin','as' => 'hhp.'], function () {
+    Route::resource('dashboard', 'HHP\DashboardController');
+    Route::resource('permohonan', 'HHPController');
+});

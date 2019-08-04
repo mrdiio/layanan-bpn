@@ -32,7 +32,7 @@
 								<th scope="row">1</th>
 								<td>{{ $hasil->nomor_pemohon}}</td>
 								<td>{{ $hasil->pemohon->nama}}</td>
-								<td>{{ $hasil->status}}</td>
+								<td>{{ $hasil->status->nama }}</td>
 							</tr>
 							</tbody>
 						</table>
