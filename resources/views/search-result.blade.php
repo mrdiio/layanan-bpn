@@ -12,7 +12,7 @@
 			<div class="c-line-center c-theme-bg"></div>
 			<p class="c-center">Anda Dapat Melihat Status Permohonan Sertifikat Melalui Tabel Dibawah Ini</p>
 		</div>
-		@if (count($hasil))
+		@if ($hasil)
 		<div class="c-content-panel">
 			<div class="c-label">Hasil pencarian : <b>{{$query}}</b></div>
 			<div class="c-body">
@@ -32,7 +32,7 @@
 								<th scope="row">1</th>
 								<td>{{ $hasil->nomor_pemohon}}</td>
 								<td>{{ $hasil->pemohon->nama}}</td>
-								<td>{{ $hasil->status}}</td>
+								<td>{{ $hasil->status->nama}}</td>
 							</tr>
 							</tbody>
 						</table>
