@@ -6,6 +6,7 @@ use App\Pemohon;
 use App\Tanggungan;
 use App\Tanah;
 use App\Permohonan;
+use Illuminate\Http\Request;
 use App\Http\Requests\PermohonanRequest;
 
 class PermohonanController extends Controller
@@ -131,7 +132,26 @@ class PermohonanController extends Controller
      */
     public function update(Request $request, Permohonan $permohonan)
     {
-        //
+        // return $permohonan;
+        $permohonan->fc_identitas = $request->fc_identitas;
+        $permohonan->surat_kuasa = $request->surat_kuasa;
+        $permohonan->bukti_perolehan = $request->bukti_perolehan;
+        $permohonan->fc_suratukur = $request->fc_suratukur;
+        $permohonan->imb = $request->imb;
+        $permohonan->fc_persetujuanbidang = $request->fc_persetujuanbidang;
+        $permohonan->fc_rekomendasi = $request->fc_rekomendasi;
+        $permohonan->surat_persetujuan_penguasaan = $request->surat_persetujuan_penguasaan;
+        $permohonan->surat_pernyataan = $request->surat_pernyataan;
+        $permohonan->surat_pelepasan_kawasan = $request->surat_pelepasan_kawasan;
+        $permohonan->surat_penunjukkan = $request->surat_penunjukkan;
+        $permohonan->surat_rencana = $request->surat_rencana;
+        $permohonan->surat_pernyataan_modal = $request->surat_pernyataan_modal;
+        $permohonan->surat_lain = $request->surat_lain;
+        $permohonan->bayar_ptpgt = $request->bayar_ptpgt;
+        $permohonan->status_id = 6;
+        $permohonan->update();
+
+        return back()->with('ubah', 'Sukses');
     }
 
     /**
