@@ -25,7 +25,7 @@ class IPController extends Controller
      */
     public function create()
     {
-        $permohonan = Permohonan::where('status_id','1','desc')->get();
+        $permohonan = Permohonan::where('status_id','1')->get();
         $status = Status::orderBy('id','asc')->get();
 
         return view('ip.permohonan-create',compact('permohonan','status'));
@@ -78,7 +78,7 @@ class IPController extends Controller
 
         $permohonan->save();
 
-        return redirect()->action('IPController@create');
+        return redirect()->action('IPController@create')->with('ubah', 'Sukses');
     }
 
     /**

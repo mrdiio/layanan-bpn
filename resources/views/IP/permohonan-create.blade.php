@@ -91,6 +91,7 @@
 <script type="text/javascript" src="{{ asset('js/plugins/tables/datatables/datatables.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/forms/selects/select2.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pages/datatables_basic.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/plugins/notifications/toastr.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/notifications/sweet_alert.min.js') }}"></script>
 <script>
     $(function() {

@@ -16,9 +16,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $aspek = Permohonan::where('status_id','5','desc')->get();
-        $pembayaran = Permohonan::where('status_id','6','desc')->get();
-        $ptpgt = Permohonan::where('status_id','7','desc')->get();
+        $aspek = Permohonan::where('status_id','5')->get();
+        $pembayaran = Permohonan::where('status_id','6')->get();
+        $ptpgt = Permohonan::where('status_id','7')->get();
 
         $status = Status::orderBy('id','asc')->get();
 
@@ -95,7 +95,7 @@ class DashboardController extends Controller
         $ptpgt->status_id = $request->status_id;
         $ptpgt->update();
 
-        return redirect()->action('P2\DashboardController@index');
+        return redirect()->action('P2\DashboardController@index')->with('ubah', 'Sukses');
     }
 
     /**

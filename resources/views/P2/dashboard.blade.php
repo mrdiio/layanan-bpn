@@ -124,41 +124,6 @@
     </div>
 </div>
 
-@foreach($pembayaran as $bayar)
-<div class="modal fade" id="pembayaran{{$bayar->id}}" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h5 class="modal-title">Ubah Status Pembayaran</h5>
-            </div>
-            <form role="form" method="POST" action="/p2/dashboard/{{$bayar->id}}" enctype="multipart/form-data">
-                {{method_field('PUT')}}
-                {{ csrf_field() }}
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label">Status</label>
-                        <div class="col-lg-9">
-                            <select class="select" name="status_id" class="form-control" required>
-                                <option></option>
-                                @foreach($status as $s)
-                                <option value="{{ $s->id }}" {{ $bayar->status_id == $s->id ? 'selected' : '' }}> {{ $s->nama}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary pull-right">Simpan</button>
-                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-@endforeach
-
 <div class="row">
     <div class="col-md-12">
         <!-- Basic datatable -->
@@ -200,7 +165,42 @@
         <!-- /basic datatable -->
     </div>
 </div>
-    
+
+@foreach($pembayaran as $bayar)
+<div class="modal fade" id="pembayaran{{$bayar->id}}" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">Ubah Status Pembayaran</h5>
+            </div>
+            <form role="form" method="POST" action="/p2/dashboard/{{$bayar->id}}" enctype="multipart/form-data">
+                {{method_field('PUT')}}
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Status</label>
+                        <div class="col-lg-9">
+                            <select class="select" name="status_id" class="form-control" required>
+                                <option></option>
+                                @foreach($status as $s)
+                                <option value="{{ $s->id }}" {{ $bayar->status_id == $s->id ? 'selected' : '' }}> {{ $s->nama}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary pull-right">Simpan</button>
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@endforeach
+
 @foreach($ptpgt as $peta)
 <div class="modal fade" id="upload{{$peta->id}}" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-md" role="document">
@@ -252,6 +252,7 @@
 <script type="text/javascript" src="{{ asset('js/plugins/tables/datatables/datatables.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/forms/selects/select2.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pages/datatables_basic.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/plugins/notifications/toastr.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/notifications/sweet_alert.min.js') }}"></script>
 <script>
     $(function() {

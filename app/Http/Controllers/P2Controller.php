@@ -25,7 +25,7 @@ class P2Controller extends Controller
      */
     public function create()
     {
-        $permohonan = Permohonan::where('status_id','4','desc')->get();
+        $permohonan = Permohonan::where('status_id','4')->get();
         $status = Status::orderBy('id','asc')->get();
 
         return view('p2.permohonan-create',compact('permohonan','status'));
@@ -78,7 +78,7 @@ class P2Controller extends Controller
 
         $permohonan->save();
 
-        return redirect()->action('P2Controller@create');
+        return redirect()->action('P2Controller@create')->with('ubah', 'Sukses');
     }
 
     /**

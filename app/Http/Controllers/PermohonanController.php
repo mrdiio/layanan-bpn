@@ -148,7 +148,7 @@ class PermohonanController extends Controller
         $permohonan->surat_pernyataan_modal = $request->surat_pernyataan_modal;
         $permohonan->surat_lain = $request->surat_lain;
         $permohonan->bayar_ptpgt = $request->bayar_ptpgt;
-        $permohonan->status_id = 6;
+        $permohonan->status_id = 1;
         $permohonan->update();
 
         return back()->with('ubah', 'Sukses');

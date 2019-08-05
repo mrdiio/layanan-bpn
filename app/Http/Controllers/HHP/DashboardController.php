@@ -16,11 +16,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $petugasA = Permohonan::where('status_id','9','desc')->get();
-        $publikasi = Permohonan::where('status_id','10','desc')->get();
-        $pencetakan = Permohonan::where('status_id','11','desc')->get();
-        $dicetak = Permohonan::where('status_id','12','desc')->get();
-        $selesai = Permohonan::where('status_id','13','desc')->get();
+        $petugasA = Permohonan::where('status_id','9')->get();
+        $publikasi = Permohonan::where('status_id','10')->get();
+        $pencetakan = Permohonan::where('status_id','11')->get();
+        $dicetak = Permohonan::where('status_id','12')->get();
+        $selesai = Permohonan::where('status_id','13')->get();
         $status = Status::orderBy('id','asc')->get();
 
         return view('hhp.dashboard',compact('petugasA','publikasi','pencetakan','dicetak','selesai','status'));
@@ -98,7 +98,7 @@ class DashboardController extends Controller
         $selesai->status_id = $request->status_id;
         $selesai->update();
 
-        return redirect()->action('HHP\DashboardController@index');
+        return redirect()->action('HHP\DashboardController@index')->with('ubah', 'Sukses');
     }
 
     /**
