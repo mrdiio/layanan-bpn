@@ -22,7 +22,8 @@
                     </li>
                     @endrole
                     @role('Loket|Superadmin')
-                    <li class="{{ request()->is('loket/permohonan/create') ? 'active' : '' }}"><a href="{{ route('loket.permohonan.create') }}"><i class="icon-user"></i> <span> Tambah Permohonan</span></a></li>
+                    <li class="{{ request()->is('loket/permohonan/*') ? 'active' : '' }}"><a href="{{ route('loket.permohonan.create') }}"><i class="icon-user"></i> <span> Tambah Permohonan</span></a></li>
+                    {{-- <li class="{{ request()->is('loket/pemohon/*') ? 'active' : '' }}"><a href="{{ route('loket.pemohon.index') }}"><i class="icon-users"></i> <span> Pemohon</span></a></li> --}}
                     @endrole
                     @role('IP|Superadmin')
                     <li class="{{ request()->is('ip/permohonan/create') ? 'active' : '' }}"><a href="{{ route('ip.permohonan.create') }}"><i class="icon-user"></i> <span> Permohonan Masuk</span></a></li>

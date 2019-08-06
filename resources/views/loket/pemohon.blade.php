@@ -13,20 +13,20 @@
                 <table class="table datatable-basic">
                     <thead>
                         <tr>
-                            <th width=5%>#</th>
-                            <th>No. Pemohon</th>
+                            <th width="5%">#</th>
+                            <th width="20%">No. Identitas</th>
                             <th>Nama</th>
-                            <th>Status</th>
+                            <th width="15%">No. Ponsel</th>
                             <th class="text-center" width=15%>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($permohonan as $item)
+                        @foreach ($pemohon as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td><a href="{{ route('loket.permohonan.show', $item->id) }}">{{ $item->nomor_pemohon }}</a></td>
-                            <td><a href="">{{ $item->pemohon->nama }}</a></td>
-                            <td>{{ $item->status->nama }}</td>
+                            <td><a href="#">{{ $item->nomor_identitas }}</a></td>
+                            <td>{{ $item->nama }}</td>
+                            <td>{{ $item->no_hp }}</td>
                             <td class="text-center">
                                 <ul class="icons-list">
                                     <li class="dropdown">
@@ -35,13 +35,8 @@
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-right">
                                             <li>
-                                                <a href="#" id="editModal" data-id="{{ $item->id }}">
-                                                    <i class="icon-pencil7"></i> Ubah
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" id="hapusModal" data-id="{{ $item->id }}" data-name="{{ $item->name }}">
-                                                    <i class="icon-trash"></i> Hapus
+                                                <a href="{{ route('loket.buat.permohonan', $item->id) }}" id="editModal" data-id="{{ $item->id }}">
+                                                    <i class="icon-pencil7"></i> Buat Permohonan
                                                 </a>
                                             </li>
                                         </ul>
