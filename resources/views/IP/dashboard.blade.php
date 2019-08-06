@@ -169,13 +169,10 @@
 <script type="text/javascript" src="{{ asset('js/plugins/forms/styling/uniform.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pages/form_layouts.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/forms/validation/validate.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/forms/wizards/stepy.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/pages/wizard_stepy.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('js/plugins/tables/datatables/datatables.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/forms/selects/select2.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pages/datatables_basic.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/notifications/toastr.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/notifications/sweet_alert.min.js') }}"></script>
 <script>
     $(function() {

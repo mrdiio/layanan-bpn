@@ -112,6 +112,11 @@ class PermohonanController extends Controller
         return view('loket.permohonan-show', compact('permohonan'));
     }
 
+    public function lihat(Permohonan $permohonan)
+    {
+        return view('permohonan-show', compact('permohonan'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -148,7 +153,9 @@ class PermohonanController extends Controller
         $permohonan->surat_pernyataan_modal = $request->surat_pernyataan_modal;
         $permohonan->surat_lain = $request->surat_lain;
         $permohonan->bayar_ptpgt = $request->bayar_ptpgt;
-        $permohonan->status_id = 1;
+        if ($request->bayar_ptpgt == 1) {
+            $permohonan->status_id = 7;
+        }
         $permohonan->update();
 
         return back()->with('ubah', 'Sukses');

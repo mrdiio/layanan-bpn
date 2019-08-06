@@ -26,6 +26,8 @@ Route::view('/register', function() {
 
 Route::get('/home', 'HomeController@index')->name('check-dashboard');
 
+Route::get('permohonan/{permohonan}', 'PermohonanController@lihat');
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::resource('dashboard', 'DashboardController')->names(['index' => 'admin.dashboard']);
     Route::resource('user', 'UserController');
@@ -36,6 +38,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 Route::group(['prefix' => 'loket', 'middleware' => 'role:Loket|Superadmin', 'as' => 'loket.'], function () {
     Route::resource('dashboard', 'loket\DashboardController');
     Route::resource('permohonan', 'PermohonanController');
+    Route::resource('pemohon', 'Loket\PemohonController');
+    Route::resource('tanah', 'Loket\TanahController');
 });
 
 Route::group(['prefix' => 'ip', 'middleware' => 'role:IP|Superadmin','as' => 'ip.'], function () {
