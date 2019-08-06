@@ -136,7 +136,7 @@
         <!-- Basic datatable -->
         <div class="panel panel-flat">
             <div class="panel-heading">
-                <h5 class="panel-title">Sertifikat Telah Dicetak</h5>
+                <h5 class="panel-title">Sertifikat Dalam Proses Paraf</h5>
             </div>
             <div class="table-responsive">
                 <table class="table datatable-basic">

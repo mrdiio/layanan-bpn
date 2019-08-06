@@ -24,7 +24,8 @@
 								<th class="col-md-1">#</th>
 								<th class="col-md-3">Nomor Pemohon</th>
 								<th class="col-md-3">Nama</th>
-								<th class="col-md-4">Status</th>
+                                <th class="col-md-4">Status</th>
+                                <th class="col-md-4">Unduh</th>
 							</tr>
 							</thead>
 							<tbody>
@@ -32,7 +33,17 @@
 								<th scope="row">1</th>
 								<td>{{ $hasil->nomor_pemohon }}</td>
 								<td>{{ $hasil->pemohon->nama }}</td>
-								<td>{{ $hasil->status->nama }}</td>
+                                <td>{{ $hasil->status->nama }}</td>
+                                <td>
+                                    @if ($hasil->file_peta_bidang)
+                                        <button type="button" onclick="window.location.href='{{ asset('images/peta_bidang/'.$hasil->file_peta_bidang) }}';" class="btn btn-success c-btn-square c-btn-uppercase c-btn-bold">Peta Bidang</button>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($hasil->file_ptpgt)
+                                    <button type="button" onclick="window.location.href='{{ asset('images/pt_pgt/'.$hasil->file_ptpgt) }}';" class="btn btn-success c-btn-square c-btn-uppercase c-btn-bold">PT PGT</button>
+                                    @endif
+                                </td> 
 							</tr>
 							</tbody>
 						</table>

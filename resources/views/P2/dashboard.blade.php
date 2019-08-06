@@ -35,7 +35,7 @@
                             <td>{{ $data->pemohon->no_hp }}</td>
                             <td>{{ $data->status->nama }}</td>
                             <td class="text-center">
-                                <a type="button" role="button"  data-toggle="modal" data-target="#update{{$data->id}}" class="btn btn-success btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah</a>
+                                <a type="button" role="button"  data-toggle="modal" data-target="#update{{$data->id}}" class="btn btn-success btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah Status</a>
                             </td>
                         </tr>
                         @endforeach
@@ -99,7 +99,6 @@
                             <th>Alamat</th>
                             <th>Kontak</th>
                             <th>Status</th>
-                            <th class="text-center" width=15%>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -111,9 +110,6 @@
                             <td>{{ $data->pemohon->alamat }}</td>
                             <td>{{ $data->pemohon->no_hp }}</td>
                             <td>{{ $data->status->nama }}</td>
-                            <td class="text-center">
-                                <a type="button" role="button"  data-toggle="modal" data-target="#pembayaran{{$data->id}}" class="btn btn-success btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah</a>
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -129,7 +125,7 @@
         <!-- Basic datatable -->
         <div class="panel panel-flat">
             <div class="panel-heading">
-                <h5 class="panel-title">Upload PTPGT Dan Permohonan Masuk P2</h5>
+                <h5 class="panel-title">Upload PTPGT Dan Permohonan Masuk HHP</h5>
             </div>
             <div class="table-responsive">
                 <table class="table datatable-basic">
@@ -154,7 +150,7 @@
                             <td>{{ $data->pemohon->no_hp }}</td>
                             <td>{{ $data->status->nama }}</td>
                             <td class="text-center">
-                                <a type="button" role="button"  data-toggle="modal" data-target="#upload{{$data->id}}" class="btn btn-success btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah</a>
+                                <a type="button" role="button"  data-toggle="modal" data-target="#upload{{$data->id}}" class="btn btn-success btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah Status</a>
                             </td>
                         </tr>
                         @endforeach
@@ -165,41 +161,6 @@
         <!-- /basic datatable -->
     </div>
 </div>
-
-@foreach($pembayaran as $bayar)
-<div class="modal fade" id="pembayaran{{$bayar->id}}" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h5 class="modal-title">Ubah Status Pembayaran</h5>
-            </div>
-            <form role="form" method="POST" action="/p2/dashboard/{{$bayar->id}}" enctype="multipart/form-data">
-                {{method_field('PUT')}}
-                {{ csrf_field() }}
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label">Status</label>
-                        <div class="col-lg-9">
-                            <select class="select" name="status_id" class="form-control" required>
-                                <option></option>
-                                @foreach($status as $s)
-                                <option value="{{ $s->id }}" {{ $bayar->status_id == $s->id ? 'selected' : '' }}> {{ $s->nama}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary pull-right">Simpan</button>
-                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-@endforeach
 
 @foreach($ptpgt as $peta)
 <div class="modal fade" id="upload{{$peta->id}}" data-backdrop="static" data-keyboard="false">

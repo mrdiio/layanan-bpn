@@ -81,10 +81,6 @@ class DashboardController extends Controller
         $aspek->status_id = $request->status_id;
         $aspek->update();
 
-        $pembayaran = Permohonan::find($id);
-        $pembayaran->status_id = $request->status_id;
-        $pembayaran->update();
-
         $ptpgt = Permohonan::find($id);
         if ($request->has('file_ptpgt')) {
             $i = $request->file('file_ptpgt');
