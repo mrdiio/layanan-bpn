@@ -17,10 +17,6 @@
 		<!-- Page content -->
 		<div class="page-content">
 
-            <!-- Main sidebar -->
-            @include('layouts.parts.sidebar')
-			<!-- /main sidebar -->
-
 			<!-- Main content -->
 			<div class="content-wrapper">
 
