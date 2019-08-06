@@ -27,13 +27,15 @@
                             </div>
                         </div>
                         
-                        <label class="control-label col-md-4 text-semibold">Bayar PTPGT<span class="pull-right">:</span></label>
-                        <div class="col-md-8">
-                            <div class="checkbox">
-                                <input type="hidden" name="bayar_ptpgt" value="0">
-                                <input {{ $permohonan->bayar_ptpgt == 1 ? 'checked': '' }} type="checkbox" name="bayar_ptpgt" value="1" class="styled">
+                        @if ($permohonan->status->id == 6 || $permohonan->bayar_ptpgt == 1)
+                            <label class="control-label col-md-4 text-semibold">Bayar PTPGT<span class="pull-right">:</span></label>
+                            <div class="col-md-8">
+                                <div class="checkbox">
+                                    <input type="hidden" name="bayar_ptpgt" value="0">
+                                    <input {{ $permohonan->bayar_ptpgt == 1 ? 'checked': '' }} type="checkbox" name="bayar_ptpgt" value="1" class="styled">
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
 
                     @if ($permohonan->file_peta_bidang)
