@@ -33,9 +33,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::resource('role', 'RoleController');
 });
 
+Route::get('permohonan/{permohonan}', 'PermohonanController@lihat');
+
 Route::group(['prefix' => 'loket', 'middleware' => 'role:Loket|Superadmin', 'as' => 'loket.'], function () {
     Route::resource('dashboard', 'loket\DashboardController');
     Route::resource('permohonan', 'PermohonanController');
+    Route::resource('pemohon', 'Loket\PemohonController');
+    // Route::get('pemohon/{pemohon}/create', 'Loket\PemohonController@createPermohonan')->name('buat.permohonan');
 });
 
 Route::group(['prefix' => 'ip', 'middleware' => 'role:IP|Superadmin','as' => 'ip.'], function () {

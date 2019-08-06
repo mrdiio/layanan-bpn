@@ -112,6 +112,11 @@ class PermohonanController extends Controller
         return view('loket.permohonan-show', compact('permohonan'));
     }
 
+    public function lihat(Permohonan $permohonan)
+    {
+        return view('permohonan-show', compact('permohonan'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
