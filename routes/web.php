@@ -39,6 +39,7 @@ Route::group(['prefix' => 'loket', 'middleware' => 'role:Loket|Superadmin', 'as'
     Route::resource('dashboard', 'loket\DashboardController');
     Route::resource('permohonan', 'PermohonanController');
     Route::resource('pemohon', 'Loket\PemohonController');
+    Route::resource('tanah', 'Loket\TanahController');
     // Route::get('pemohon/{pemohon}/create', 'Loket\PemohonController@createPermohonan')->name('buat.permohonan');
 });
 
