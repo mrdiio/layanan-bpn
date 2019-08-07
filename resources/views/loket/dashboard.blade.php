@@ -25,7 +25,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td><a href="{{ route('loket.permohonan.show', $item->id) }}">{{ $item->nomor_pemohon }}</a></td>
-                            <td><a href="">{{ $item->pemohon->nama }}</a></td>
+                            <td>{{ $item->pemohon->nama }}</td>
                             <td>{{ $item->status->nama }}</td>
                             <td class="text-center">
                                 <ul class="icons-list">
@@ -35,12 +35,7 @@
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-right">
                                             <li>
-                                                <a href="#" id="editModal" data-id="{{ $item->id }}">
-                                                    <i class="icon-pencil7"></i> Ubah
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" id="hapusModal" data-id="{{ $item->id }}" data-name="{{ $item->name }}">
+                                                <a href="#" id="hapusModal" data-id="{{ $item->id }}" data-name="{{ $item->nomor_pemohon }}">
                                                     <i class="icon-trash"></i> Hapus
                                                 </a>
                                             </li>
@@ -74,6 +69,44 @@
         }],
       });
     });
+
+    // Destroy
+    $(function() {
+        $(document).on('click', '#hapusModal', function(e) {
+            e.preventDefault();
+            var id = $(this).data('id');
+            var name = $(this).data('name');
+            swal({
+                title: "Anda yakin ingin menghapus Permohonan?",
+                text: name,
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#FF7043",
+                confirmButtonText: "Yes, delete it!"
+            },
+            function() {
+                $.ajax({
+                    type: 'delete',
+                    url: 'permohonan/' + id,
+                    data: {
+                        '_token': $('input[name=_token]').val(),
+                    },
+                    success: function(data) {
+                        toastr.success('Data berhasil dihapus!', 'Terhapus', {timeOut: 5000});
+                        location.reload();
+                        // console.log(id);
+                        
+                    },
+                    error: function(errors) {
+                        toastr.error("Data Error.");
+                        var error = errors.responseJSON;
+                        // console.log(error);
+                    },
+                })
+            })
+        })
+    })
+    // destroy
 </script>
 
 @endpush
