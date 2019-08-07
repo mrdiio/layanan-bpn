@@ -14,7 +14,7 @@
 		</div>
 		@if ($hasil)
 		<div class="c-content-panel">
-			<div class="c-label">Hasil pencarian : <b>{{$query}}</b></div>
+			<div class="c-label">Hasil pencarian : <b>{{ $request->nomor_pemohon }}</b></div>
 			<div class="c-body">
 				<div class="row">
 					<div class="col-md-12">
@@ -52,7 +52,7 @@
 			</div>
 		</div>
         @else
-            <div class="alert alert-danger" role="alert"><center>Oops.. Data <b>{{$query}}</b> Tidak Ditemukan, Kembali ke <a href="/">Home</a></center></div>
+            <div class="alert alert-danger" role="alert"><center>Oops.. Data <b>{{ $request->nomor_pemohon }}</b> Tidak Ditemukan, Kembali ke <a href="/">Home</a></center></div>
         @endif
     </div>
  </div>   

@@ -17,9 +17,6 @@
                         <div class="col-md-4">
                             <input class="form-control  c-square c-theme input-lg" type="text" name="nomor_pemohon" placeholder="Masukkan Nomor Pemohon" required>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-control  c-square c-theme input-lg" type="text" name="nama" placeholder="Masukkan Nama Pemohon" required>
-                        </div>
                         <div class="form-group col-md-1">
                             <span class="input-group-btn">
                                 <button type="submit" class="btn c-theme-btn c-btn-uppercase btn-lg c-btn-sbold c-btn-square">Cari</button>

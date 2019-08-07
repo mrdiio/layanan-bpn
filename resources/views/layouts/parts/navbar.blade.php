@@ -49,24 +49,27 @@
                     <li class="{{ request()->is('*/user') ? 'active' : '' }}"><a href="{{ route('user.index') }}"><i class="icon-user position-left"></i> <span>User</span></a></li>
                     @endrole
                     @role('Superadmin')
-                    <li>
-                        <a href="#"><i class="icon-stack position-left"></i> <span>Role & Permission</span></a>
-                        <ul>
+                    <li class="dropdown">
+                        <a href="#"class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-stack position-left"></i>Role & Permission <span class="caret"></span>
+                        
+                        </a>
+                        <ul class="dropdown-menu width-200">
                             <li class="{{ request()->is('*/role') ? 'active' : '' }}"><a href="{{ route('role.index') }}">Role</a></li>
                             <li class="{{ request()->is('*/permission') ? 'active' : '' }}"><a href="{{ route('permission.index') }}">Permission</a></li>
                         </ul>
                     </li>
                     @endrole
-                    @role('Loket|Superadmin')
+                    @role('Loket')
                     <li class="{{ request()->is('loket/permohonan/create') ? 'active' : '' }}"><a href="{{ route('loket.permohonan.create') }}"><i class="icon-user position-left"></i> <span> Tambah Permohonan</span></a></li>
                     @endrole
-                    @role('IP|Superadmin')
+                    @role('IP')
                     <li class="{{ request()->is('ip/permohonan/create') ? 'active' : '' }}"><a href="{{ route('ip.permohonan.create') }}"><i class="icon-user position-left"></i> <span> Permohonan Masuk</span></a></li>
                     @endrole
-                    @role('P2|Superadmin')
+                    @role('P2')
                     <li class="{{ request()->is('p2/permohonan/create') ? 'active' : '' }}"><a href="{{ route('p2.permohonan.create') }}"><i class="icon-user position-left"></i> <span> Permohonan Masuk</span></a></li>
                     @endrole
-                    @role('HHP|Superadmin')
+                    @role('HHP')
                     <li class="{{ request()->is('hhp/permohonan/create') ? 'active' : '' }}"><a href="{{ route('hhp.permohonan.create') }}"><i class="icon-user position-left"></i> <span> Permohonan Masuk</span></a></li>
                     @endrole
                     <!-- /main -->
