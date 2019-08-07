@@ -29,17 +29,10 @@
                             <td>{{ $item->status->nama }}</td>
                             <td class="text-center">
                                 <ul class="icons-list">
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            <i class="icon-menu9"></i>
+                                    <li class="text-danger">
+                                        <a href="#" id="hapusModal" data-id="{{ $item->id }}" data-name="{{ $item->nomor_pemohon }}">
+                                            <i class="icon-trash"></i>
                                         </a>
-                                        <ul class="dropdown-menu dropdown-menu-right">
-                                            <li>
-                                                <a href="#" id="hapusModal" data-id="{{ $item->id }}" data-name="{{ $item->nomor_pemohon }}">
-                                                    <i class="icon-trash"></i> Hapus
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </li>
                                 </ul>
                             </td>
