@@ -7,11 +7,6 @@
 
 <div class="c-content-box c-size-md c-bg-white">
 	<div class="container">
-		<div class="c-content-title-1">
-			<h3 class="c-center c-font-dark c-font-uppercase">Status Permohonan Sertifikat</h3>
-			<div class="c-line-center c-theme-bg"></div>
-			<p class="c-center">Anda Dapat Melihat Status Permohonan Sertifikat Melalui Tabel Dibawah Ini</p>
-		</div>
 		@if ($hasil)
 		<div class="c-content-panel">
 			<div class="c-label">Hasil pencarian : <b>{{ $request->nomor_pemohon }}</b></div>

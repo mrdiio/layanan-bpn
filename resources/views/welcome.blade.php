@@ -4,6 +4,48 @@
 <!-- BEGIN: PAGE CONTENT -->
 
 @include('layouts.partsfront.breadcumb')
+<div class="c-content-box c-size-md c-bg-white">
+    <div class="container">
+        <div class="c-content-title-1">
+            <h3 class="c-center c-font-dark c-font-uppercase">Data Permohonan Yang Sudah di Publikasi</h3>
+            <div class="c-line-center c-theme-bg"></div>
+        </div>
+        <div class="c-content-panel">
+            <div class="c-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>No. Pemohon</th>
+                                    <th>Nama</th>
+                                    <th>Alamat Tanah</th>
+                                    <th>Luas</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach ($permohonan as $data)
+                                <tr>
+                                    <th scope="row">{{ $loop->iteration }}</th>
+                                    <td>{{ $data->nomor_pemohon }}</td>
+                                    <td>{{ $data->pemohon->nama }}</td>
+                                    <td>{{ $data->tanah->jalan }}, {{ $data->tanah->desa }}, {{ $data->tanah->kecamatan }}</td>
+                                    <td>{{ $data->tanah->luas }} m2</td>
+                                </tr>  
+                                @endforeach
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>>
 <!-- BEGIN: CONTENT/BARS/BAR-3 -->
 <div class="c-content-box c-size-md c-bg-dark">
     <div class="container">
