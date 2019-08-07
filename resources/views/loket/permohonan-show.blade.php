@@ -43,6 +43,8 @@
                                     <input {{ $permohonan->bayar_ptpgt == 1 ? 'checked': '' }} type="checkbox" name="bayar_ptpgt" value="1" class="styled">
                                 </div>
                             </div>
+                        @else
+                            <input type="hidden" name="bayar_ptpgt" value="0">                            
                         @endif
                     </div>
 
