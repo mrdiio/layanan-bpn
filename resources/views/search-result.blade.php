@@ -5,7 +5,7 @@
 
 @include('layouts.partsfront.breadcumb')
 
-<div class="c-content-box c-size-md c-bg-white">
+<div class="c-content-box c-size-md c-bg-white" style="min-height:311px">
 	<div class="container">
 		@if ($hasil)
 		<div class="c-content-panel">
@@ -47,7 +47,7 @@
 			</div>
 		</div>
         @else
-            <div class="alert alert-danger" role="alert"><center>Oops.. Data <b>{{ $request->nomor_pemohon }}</b> Tidak Ditemukan, Kembali ke <a href="/">Home</a></center></div>
+            <div class="alert alert-danger" role="alert" ><center>Oops.. Data <b>{{ $request->nomor_pemohon }}</b> Tidak Ditemukan, Kembali ke <a href="/">Home</a></center></div>
         @endif
     </div>
  </div>   
