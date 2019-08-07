@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-md-12">
         <!-- Basic datatable -->
-        <div class="panel panel-flat">
+        <div class="panel panel-danger panel-bordered">
             <div class="panel-heading">
                 <h5 class="panel-title">Data Pembuatan Laporan Aspek Pertimbangan</h5>
             </div>
@@ -35,7 +35,7 @@
                             <td>{{ $data->pemohon->no_hp }}</td>
                             <td>{{ $data->status->nama }}</td>
                             <td class="text-center">
-                                <a type="button" role="button"  data-toggle="modal" data-target="#update{{$data->id}}" class="btn btn-success btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah Status</a>
+                                <a data-toggle="modal" data-target="#update{{$data->id}}" class="btn btn-primary btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah Status</a>
                             </td>
                         </tr>
                         @endforeach
@@ -85,7 +85,7 @@
 <div class="row">
     <div class="col-md-12">
         <!-- Basic datatable -->
-        <div class="panel panel-flat">
+        <div class="panel panel-danger panel-bordered">
             <div class="panel-heading">
                 <h5 class="panel-title">Menunggu Pembayaran PTPGT</h5>
             </div>
@@ -123,7 +123,7 @@
 <div class="row">
     <div class="col-md-12">
         <!-- Basic datatable -->
-        <div class="panel panel-flat">
+        <div class="panel panel-danger panel-bordered">
             <div class="panel-heading">
                 <h5 class="panel-title">Upload PTPGT Dan Permohonan Masuk HHP</h5>
             </div>
@@ -150,7 +150,7 @@
                             <td>{{ $data->pemohon->no_hp }}</td>
                             <td>{{ $data->status->nama }}</td>
                             <td class="text-center">
-                                <a type="button" role="button"  data-toggle="modal" data-target="#upload{{$data->id}}" class="btn btn-success btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah Status</a>
+                                <a data-toggle="modal" data-target="#upload{{$data->id}}" class="btn btn-primary btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah Status</a>
                             </td>
                         </tr>
                         @endforeach

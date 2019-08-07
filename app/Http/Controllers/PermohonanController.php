@@ -169,6 +169,7 @@ class PermohonanController extends Controller
      */
     public function destroy(Permohonan $permohonan)
     {
-        //
+        $permohonan->delete();
+        return response()->json($permohonan, 200);
     }
 }

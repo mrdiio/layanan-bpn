@@ -12,6 +12,14 @@
                 <form class="form-horizontal" method="POST" action="{{ route('loket.permohonan.update', $permohonan->id) }}">
                 @csrf
                 @method('put')
+                    <div class="row">
+                        @if ($permohonan->file_peta_bidang)
+                            <button type="button" class="btn btn-danger" onclick="window.location.href = '{{ asset('images/peta_bidang/'.$permohonan->file_peta_bidang) }}';">Unduh Peta Bidang</button>
+                        @endif
+                        @if ($permohonan->file_ptpgt)
+                            <button type="button" class="btn btn-danger" onclick="window.location.href = '{{ asset('images/pt_pgt/'.$permohonan->file_ptpgt) }}';">Unduh Aspek Pertimbangan</button>
+                        @endif
+                    </div>
                     <div class="form-group h5">
                         <label class="control-label col-md-4 text-semibold">No. Pemohon<span class="pull-right">:</span></label>
                         <div class="col-md-8">
@@ -38,16 +46,11 @@
                         @endif
                     </div>
 
-                    @if ($permohonan->file_peta_bidang)
-                        <button type="button" class="btn btn-success" onclick="window.location.href = '{{ asset('images/peta_bidang/'.$permohonan->file_peta_bidang) }}';">Unduh Peta Bidang</button>
-                    @endif
-                    @if ($permohonan->file_ptpgt)
-                        <button type="button" class="btn btn-success" onclick="window.location.href = '{{ asset('images/pt_pgt/'.$permohonan->file_ptpgt) }}';">Unduh Aspek Pertimbangan</button>
-                    @endif
+                    
 
                     <div class="table-responsive">
                         <table class="table">
-                            <thead>
+                            <thead class="bg-danger">
                                 <tr>
                                     <th width="5">#</th>
                                     <th>Persyaratan</th>
@@ -185,7 +188,7 @@
                     Data Pemohon : 
                 </h5>
                 <div class="heading-elements">
-                    <button class="btn btn-primary btn-xs pull-left" data-toggle="modal" data-target="#modalPemohon">Edit Pemohon</button>
+                    <button class="btn btn-danger btn-xs pull-left" data-toggle="modal" data-target="#modalPemohon">Edit Pemohon</button>
                     <ul class="icons-list">
                         <li><a data-action="collapse"></a></li>
                     </ul>
@@ -274,7 +277,7 @@
                     Data Tanah : 
                 </h5>
                 <div class="heading-elements">
-                    <button class="btn btn-primary btn-xs pull-left" data-toggle="modal" data-target="#modalTanah">Edit Tanah</button>
+                    <button class="btn btn-danger btn-xs pull-left" data-toggle="modal" data-target="#modalTanah">Edit Tanah</button>
                     <ul class="icons-list">
                         <li><a data-action="collapse"></a></li>
                     </ul>

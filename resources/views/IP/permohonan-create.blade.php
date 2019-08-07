@@ -12,7 +12,7 @@
             <div class="table-responsive">
                 <table class="table datatable-basic">
                     <thead>
-                        <tr>
+                        <tr class="bg-danger">
                             <th width=5%>#</th>
                             <th>Nomor Pemohon</th>
                             <th>Nama</th>
@@ -32,7 +32,7 @@
                             <td>{{ $data->pemohon->no_hp }}</td>
                             <td>{{ $data->status->nama }}</td>
                             <td class="text-center">
-                                <a type="button" role="button"  data-toggle="modal" data-target="#update{{$data->id}}" class="btn btn-success btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah Status</a>
+                                <a data-toggle="modal" data-target="#update{{$data->id}}" class="btn btn-primary btn-labeled btn-xs legitRipple"><b><i class="icon-pencil7"></i></b> Ubah Status</a>
                             </td>
                         </tr>
                         @endforeach
