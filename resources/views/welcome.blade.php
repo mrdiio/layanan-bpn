@@ -45,7 +45,7 @@
             </div>
         </div>
     </div>
-</div>>
+</div>
 <!-- BEGIN: CONTENT/BARS/BAR-3 -->
 <div class="c-content-box c-size-md c-bg-dark">
     <div class="container">
