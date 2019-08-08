@@ -190,6 +190,8 @@
                             <th>Alamat</th>
                             <th>Kontak</th>
                             <th>Status</th>
+                            <th>Peta Bidang</th>
+                            <th>PTPGT</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -201,6 +203,16 @@
                             <td>{{ $data->pemohon->alamat }}</td>
                             <td>{{ $data->pemohon->no_hp }}</td>
                             <td><span class="label label-primary">{{ $data->status->nama }}</span></td>
+                            <td>
+                                @if ($data->file_peta_bidang)
+                                    <button type="button" role="button" onclick="window.location.href='{{ asset('images/peta_bidang/'.$data->file_peta_bidang) }}';" class="btn btn-success btn-labeled btn-xs legitRipple"><b><i class="icon-file-download2"></i></b> Unduh</button>
+                                @endif
+                            </td>
+                            <td>
+                                @if ($data->file_peta_bidang)
+                                <button type="button" role="button" onclick="window.location.href='{{ asset('images/pt_pgt/'.$data->file_ptpgt) }}';" class="btn btn-success btn-labeled btn-xs legitRipple"><b><i class="icon-file-download2"></i></b> Unduh</button>
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
