@@ -182,13 +182,12 @@
                     @csrf
                     <h5 class="panel-title">
                         Permohonan Selesai 
-                        <button type="button" class="btn btn-primary" id="downloadExcel">Download Excel</button>
                         <button type="submit" class="btn btn-primary">Download PDF</button>
                     </h5>
                 </form>
             </div>
             <div class="table-responsive">
-                <table class="table selesai">
+                <table class="table datatable-basic">
                     <thead>
                         <tr>
                             <th width=5%>#</th>
@@ -396,22 +395,6 @@
 <script>
     $(function() {
         $('.datatable-basic').DataTable();
-
-        $('.selesai').append('<caption style="caption-side: bottom">A fictional company\'s staff table.</caption>');
-
-        var test = $('.selesai').DataTable( {
-            // dom: 'Bfrtip',
-            buttons: [
-                {
-                    extend: 'excel',
-                    messageTop: 'The information in this table is copyright to Sirius Cybernetics Corp.'
-                }
-            ]
-        });
-
-        $("#downloadExcel").on("click", function() {
-            test.button( '.buttons-excel' ).trigger();
-        });
     });
 </script>
 @endpush
