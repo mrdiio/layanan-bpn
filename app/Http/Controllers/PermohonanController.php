@@ -177,8 +177,7 @@ class PermohonanController extends Controller
 
     public function pdf()
     {
-        $permohonan = Permohonan::all();
-        // $date = Carbon::setLocale('id')->formatLocalized("%A, %d %B %Y");
+        $permohonan = Permohonan::where('status_id', 13)->orderBy('updated_at', 'desc')->get();
         $pdf = PDF::loadView('hhp.permohonan-selesai-pdf', compact('permohonan'))->setPaper('a4', 'landscape');
         
         return $pdf->stream();
