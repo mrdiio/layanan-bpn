@@ -6,6 +6,8 @@ use App\Pemohon;
 use App\Tanggungan;
 use App\Tanah;
 use App\Permohonan;
+use PDF;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests\PermohonanRequest;
 
@@ -171,5 +173,14 @@ class PermohonanController extends Controller
     {
         $permohonan->delete();
         return response()->json($permohonan, 200);
+    }
+
+    public function pdf()
+    {
+        $permohonan = Permohonan::all();
+        // $date = Carbon::setLocale('id')->formatLocalized("%A, %d %B %Y");
+        $pdf = PDF::loadView('hhp.permohonan-selesai-pdf', compact('permohonan'))->setPaper('a4', 'landscape');
+        
+        return $pdf->stream();
     }
 }

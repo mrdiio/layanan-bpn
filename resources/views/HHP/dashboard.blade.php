@@ -155,7 +155,7 @@
                         @foreach ($dicetak as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data->nomor_pemohon }}</td>
+                            <td><a href="{{ route('permohonan', $data->id) }}">{{ $data->nomor_pemohon }}</a></td>
                             <td>{{ $data->pemohon->nama }}</td>
                             <td>{{ $data->pemohon->alamat }}</td>
                             <td>{{ $data->pemohon->no_hp }}</td>
@@ -178,10 +178,17 @@
         <!-- Basic datatable -->
         <div class="panel panel-flat">
             <div class="panel-heading">
-                <h5 class="panel-title">Permohonan Selesai</h5>
+                <form action="{{ route('pdf') }}" method="post" target="_blank">
+                    @csrf
+                    <h5 class="panel-title">
+                        Permohonan Selesai 
+                        <button type="button" class="btn btn-primary" id="downloadExcel">Download Excel</button>
+                        <button type="submit" class="btn btn-primary">Download PDF</button>
+                    </h5>
+                </form>
             </div>
             <div class="table-responsive">
-                <table class="table datatable-basic">
+                <table class="table selesai">
                     <thead>
                         <tr>
                             <th width=5%>#</th>
@@ -198,7 +205,7 @@
                         @foreach ($selesai as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data->nomor_pemohon }}</td>
+                            <td><a href="{{ route('permohonan', $data->id) }}">{{ $data->nomor_pemohon }}</a></td>
                             <td>{{ $data->pemohon->nama }}</td>
                             <td>{{ $data->pemohon->alamat }}</td>
                             <td>{{ $data->pemohon->no_hp }}</td>
@@ -368,24 +375,43 @@
 @push('js')
 <script type="text/javascript" src="{{ asset('js/plugins/forms/styling/uniform.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pages/form_layouts.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/forms/validation/validate.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/forms/wizards/stepy.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/pages/wizard_stepy.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('js/plugins/tables/datatables/datatables.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/forms/selects/select2.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pages/datatables_basic.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/notifications/toastr.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/notifications/sweet_alert.min.js') }}"></script>
+
+{{-- <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" /> --}}
+<link href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" rel="stylesheet" />
+
+{{-- <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> --}}
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+{{-- <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script> --}}
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+        
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+
+
 <script>
     $(function() {
-      $('.datatable-basic').DataTable({
-        columnDefs: [{ 
-            orderable: false,
-            width: '100px',
-            targets: [ 4 ]
-        }],
-      });
+        $('.datatable-basic').DataTable();
+
+        $('.selesai').append('<caption style="caption-side: bottom">A fictional company\'s staff table.</caption>');
+
+        var test = $('.selesai').DataTable( {
+            // dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'excel',
+                    messageTop: 'The information in this table is copyright to Sirius Cybernetics Corp.'
+                }
+            ]
+        });
+
+        $("#downloadExcel").on("click", function() {
+            test.button( '.buttons-excel' ).trigger();
+        });
     });
 </script>
 @endpush
