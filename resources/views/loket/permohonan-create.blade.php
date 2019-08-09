@@ -191,7 +191,7 @@
                         <div class="col-md-3">
                             <label class="control-label col-md-3">Tgl.</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="tanggal_haktanah">
+                                <input type="date" class="form-control" name="tanggal_haktanah">
                             </div>
                         </div>
                         <div class="col-md-3">
