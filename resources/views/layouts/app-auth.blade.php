@@ -4,23 +4,7 @@
     @include('layouts.parts.htmlhead')
 </head>
 
-<body class="login-container">
-
-	<!-- Main navbar -->
-	<div class="navbar navbar-default navbar-inverse bg-orange-400">
-
-		<div class="navbar-collapse collapse" id="navbar-mobile">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					@if (Route::has('register'))
-						<a href="{{ route('register') }}">Register</a>
-					@endif
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!-- /main navbar -->
-
+<body class="login-container login-cover" style="background-image: url(images/login_cover.jpg); no-repeat;">
 
 	<!-- Page container -->
 	<div class="page-container">
@@ -30,7 +14,7 @@
 			<!-- Main content -->
 			<div class="content-wrapper">
 				<!-- Content area -->
-                <div class="content">
+                <div class="content pb-20">
                     @yield('content')
 
                     <!-- Footer -->

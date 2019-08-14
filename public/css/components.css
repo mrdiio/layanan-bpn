@@ -19124,7 +19124,6 @@ thead .htCollapseButton:after {
  *
  * ---------------------------------------------------------------------------- */
 .login-cover {
-  background: url('../images/login_cover.jpg') no-repeat;
   background-size: cover;
 }
 .login-container .page-container {
