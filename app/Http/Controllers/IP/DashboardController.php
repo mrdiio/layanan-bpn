@@ -77,10 +77,6 @@ class DashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $prapengukuran = Permohonan::find($id);
-        $prapengukuran->status_id = $request->status_id;
-        $prapengukuran->update();
-
         $pengukuran = Permohonan::find($id);
         if ($request->has('file_peta_bidang')) {
             $i = $request->file('file_peta_bidang');
