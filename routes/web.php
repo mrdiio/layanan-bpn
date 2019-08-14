@@ -27,7 +27,7 @@ Route::view('/register', function() {
 Route::get('/home', 'HomeController@index')->name('check-dashboard');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
-    Route::resource('dashboard', 'DashboardController')->names(['index' => 'admin.dashboard']);
+    Route::resource('dashboard', 'UserController')->names(['index' => 'admin.dashboard']);
     Route::resource('user', 'UserController');
     Route::resource('permission', 'PermissionController');
     Route::resource('role', 'RoleController');
