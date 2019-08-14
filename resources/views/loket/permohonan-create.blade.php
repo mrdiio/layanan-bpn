@@ -177,8 +177,12 @@
                 <div class="form-group">
                     <label class="control-label col-md-3">4. Status Tanah : </label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="status_tanah" required>
-
+                        <select name="status_tanah" id="status_tanah" class="select" required>
+                            <option selected disabled hidden></option>
+                            <option>Hak Milik</option>
+                            <option>Hak Guna Usaha</option>
+                            <option>Hak Guna Bangunan</option>
+                        </select>
                         <label class="control-label col-md-3">(Hak yang melekat di atas tanah)</label>
                         <div class="col-md-3">
                             <select name="hak_tanah" id="hak_tanah" class="select" required>
@@ -191,7 +195,7 @@
                         <div class="col-md-3">
                             <label class="control-label col-md-3">Tgl.</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="tanggal_haktanah" required>
+                                <input type="date" class="form-control" name="tanggal_haktanah" required>
                             </div>
                         </div>
                         <div class="col-md-3">
