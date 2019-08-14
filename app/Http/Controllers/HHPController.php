@@ -15,7 +15,10 @@ class HHPController extends Controller
      */
     public function index()
     {
-        return view('hhp.dashboard');
+        $permohonan = Permohonan::where('status_id','8')->get();
+        $status = Status::where('id', 9)->get();
+
+        return view('hhp.permohonan-create',compact('permohonan','status'));
     }
 
     /**
@@ -25,10 +28,7 @@ class HHPController extends Controller
      */
     public function create()
     {
-        $permohonan = Permohonan::where('status_id','8')->get();
-        $status = Status::orderBy('id','asc')->get();
-
-        return view('hhp.permohonan-create',compact('permohonan','status'));
+        //
     }
 
     /*
@@ -78,7 +78,7 @@ class HHPController extends Controller
 
         $permohonan->save();
 
-        return redirect()->action('HHPController@create')->with('ubah', 'Sukses');
+        return redirect()->action('HHPController@index')->with('ubah', 'Sukses');
     }
 
     /**

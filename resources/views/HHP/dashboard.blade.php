@@ -187,7 +187,7 @@
                 </form>
             </div>
             <div class="table-responsive">
-                <table class="table datatable-basic">
+                <table class="table datatable-selesai">
                     <thead>
                         <tr>
                             <th width=5%>#</th>
@@ -237,23 +237,21 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h5 class="modal-title">Ubah Status</h5>
             </div>
-            <form role="form" method="POST" action="/hhp/dashboard/{{$edit->id}}" enctype="multipart/form-data">
-                {{method_field('PUT')}}
-                {{ csrf_field() }}
+            <form class="form-horizontal" method="POST" action="/hhp/dashboard/{{$edit->id}}" enctype="multipart/form-data">
+                @method('put')
+                @csrf
                 <div class="modal-body">
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Status</label>
                         <div class="col-lg-9">
                             <select class="select" name="status_id" class="form-control" required>
-                                <option></option>
-                                @foreach($status as $s)
-                                <option value="{{ $s->id }}" {{ $edit->status_id == $s->id ? 'selected' : '' }}> {{ $s->nama}}</option>
+                                @foreach($status1 as $s)
+                                <option value="{{ $s->id }}"> {{ $s->nama}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                 </div>
-                <br>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary pull-right">Simpan</button>
                     <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
@@ -272,23 +270,21 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h5 class="modal-title">Ubah Status</h5>
             </div>
-            <form role="form" method="POST" action="/hhp/dashboard/{{$edit->id}}" enctype="multipart/form-data">
-                {{method_field('PUT')}}
-                {{ csrf_field() }}
+            <form class="form-horizontal" method="POST" action="/hhp/dashboard/{{$edit->id}}" enctype="multipart/form-data">
+                @method('put')
+                @csrf
                 <div class="modal-body">
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Status</label>
                         <div class="col-lg-9">
                             <select class="select" name="status_id" class="form-control" required>
-                                <option></option>
-                                @foreach($status as $s)
+                                @foreach($status2 as $s)
                                 <option value="{{ $s->id }}" {{ $edit->status_id == $s->id ? 'selected' : '' }}> {{ $s->nama}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                 </div>
-                <br>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary pull-right">Simpan</button>
                     <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
@@ -307,23 +303,21 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h5 class="modal-title">Ubah Status</h5>
             </div>
-            <form role="form" method="POST" action="/hhp/dashboard/{{$edit->id}}" enctype="multipart/form-data">
-                {{method_field('PUT')}}
-                {{ csrf_field() }}
+            <form class="form-horizontal" method="POST" action="/hhp/dashboard/{{$edit->id}}" enctype="multipart/form-data">
+                @method('put')
+                @csrf
                 <div class="modal-body">
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Status</label>
                         <div class="col-lg-9">
                             <select class="select" name="status_id" class="form-control" required>
-                                <option></option>
-                                @foreach($status as $s)
+                                @foreach($status3 as $s)
                                 <option value="{{ $s->id }}" {{ $edit->status_id == $s->id ? 'selected' : '' }}> {{ $s->nama}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                 </div>
-                <br>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary pull-right">Simpan</button>
                     <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
@@ -342,23 +336,21 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h5 class="modal-title">Ubah Status</h5>
             </div>
-            <form role="form" method="POST" action="/hhp/dashboard/{{$edit->id}}" enctype="multipart/form-data">
-                {{method_field('PUT')}}
-                {{ csrf_field() }}
+            <form class="form-horizontal" method="POST" action="/hhp/dashboard/{{$edit->id}}" enctype="multipart/form-data">
+                @method('put')
+                @csrf
                 <div class="modal-body">
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Status</label>
                         <div class="col-lg-9">
                             <select class="select" name="status_id" class="form-control" required>
-                                <option></option>
-                                @foreach($status as $s)
+                                @foreach($status4 as $s)
                                 <option value="{{ $s->id }}" {{ $edit->status_id == $s->id ? 'selected' : '' }}> {{ $s->nama}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                 </div>
-                <br>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary pull-right">Simpan</button>
                     <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
@@ -378,23 +370,23 @@
 <script type="text/javascript" src="{{ asset('js/plugins/tables/datatables/datatables.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/forms/selects/select2.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pages/datatables_basic.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/notifications/sweet_alert.min.js') }}"></script>
-
-{{-- <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" /> --}}
-<link href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" rel="stylesheet" />
-
-{{-- <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> --}}
-<script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-{{-- <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script> --}}
-<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-        
-<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
-
 
 <script>
     $(function() {
-        $('.datatable-basic').DataTable();
+        $('.datatable-basic').DataTable({
+            columnDefs: [{ 
+                orderable: false,
+                width: '100px',
+                targets: [ 6 ]
+            }],
+        });
+        $('.datatable-selesai').DataTable({
+            columnDefs: [{ 
+                orderable: false,
+                width: '100px',
+                targets: [ 6,7 ]
+            }],
+        });
     });
 </script>
 @endpush

@@ -30,51 +30,51 @@
                 <div class="form-group">
                     <label class="control-label col-md-2">Nama dan Umur</label>
                     <div class="col-md-4">
-                        <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap">
+                        <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
                     </div>
                     <div class="col-md-1">
-                        <input type="number" name="umur" class="form-control" placeholder="Umur">
+                        <input type="number" name="umur" class="form-control" placeholder="Umur" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-md-2">Kewarganegaraan</label>
                     <div class="col-md-3">
-                        <input type="text" name="kewarganegaraan" class="form-control">
+                        <input type="text" name="kewarganegaraan" class="form-control" required>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" name="jenis_identitas" class="form-control" placeholder="Surat Identitas yang digunakan">
+                        <input type="text" name="jenis_identitas" class="form-control" placeholder="Surat Identitas yang digunakan" required>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" name="nomor_identitas" class="form-control" placeholder="Nomor Identitas">
+                        <input type="text" name="nomor_identitas" class="form-control" placeholder="Nomor Identitas" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-md-2">Pekerjaan</label>
                     <div class="col-md-10">
-                        <input type="text" name="pekerjaan" class="form-control">
+                        <input type="text" name="pekerjaan" class="form-control" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-md-2">Alamat</label>
                     <div class="col-md-10">
-                        <input type="text" name="alamat" class="form-control">
+                        <input type="text" name="alamat" class="form-control" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-md-2">Nama Ibu</label>
                     <div class="col-md-10">
-                        <input type="text" name="nama_ibu" class="form-control">
+                        <input type="text" name="nama_ibu" class="form-control" required>
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label class="control-label col-md-2">Nomor Telepon</label>
                     <div class="col-md-10">
-                        <input type="number" name="no_hp" class="form-control">
+                        <input type="number" name="no_hp" class="form-control" required>
                     </div>
                 </div>
 
@@ -122,22 +122,22 @@
                     <div class="col-md-9">
                         <label class="control-label col-md-2">Jalan</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="jalan">
+                            <input type="text" class="form-control" name="jalan" required>
                         </div>
 
                         <label class="control-label col-md-2">Desa</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="desa">
+                            <input type="text" class="form-control" name="desa" required>
                         </div>
 
                         <label class="control-label col-md-2">Kecamatan</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="kecamatan">
+                            <input type="text" class="form-control" name="kecamatan" required>
                         </div>
 
                         <label class="control-label col-md-2">Kabupaten</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="kabupaten">
+                            <input type="text" class="form-control" name="kabupaten" required>
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-3">2. Luasnya : </label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="luas">
+                        <input type="text" class="form-control" name="luas" required>
                     </div>
                 </div>
 
@@ -154,22 +154,22 @@
                     <div class="col-md-9">
                         <label class="control-label col-md-2">Utara</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="batas_utara">
+                            <input type="text" class="form-control" name="batas_utara" required>
                         </div>
 
                         <label class="control-label col-md-2">Timur</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="batas_timur">
+                            <input type="text" class="form-control" name="batas_timur" required>
                         </div>
 
                         <label class="control-label col-md-2">Barat</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="batas_barat">
+                            <input type="text" class="form-control" name="batas_barat" required>
                         </div>
 
                         <label class="control-label col-md-2">Selatan</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="batas_selatan">
+                            <input type="text" class="form-control" name="batas_selatan" required>
                         </div>
                     </div>
                 </div>
@@ -177,11 +177,11 @@
                 <div class="form-group">
                     <label class="control-label col-md-3">4. Status Tanah : </label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="status_tanah">
+                        <input type="text" class="form-control" name="status_tanah" required>
 
                         <label class="control-label col-md-3">(Hak yang melekat di atas tanah)</label>
                         <div class="col-md-3">
-                            <select name="hak_tanah" id="hak_tanah" class="select">
+                            <select name="hak_tanah" id="hak_tanah" class="select" required>
                                 <option selected disabled hidden></option>
                                 <option>SKPT</option>
                                 <option>Ketitir</option>
@@ -191,13 +191,13 @@
                         <div class="col-md-3">
                             <label class="control-label col-md-3">Tgl.</label>
                             <div class="col-md-9">
-                                <input type="date" class="form-control" name="tanggal_haktanah">
+                                <input type="date" class="form-control" name="tanggal_haktanah" required>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label class="control-label col-md-3">No.</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="nomor_haktanah">
+                                <input type="text" class="form-control" name="nomor_haktanah" required>
                             </div>
                         </div>
                     </div>
@@ -207,7 +207,7 @@
                     <label class="control-label col-md-3">5. Jenis dan Keadaan Tanah : </label>
                     <div class="col-md-9">
                         <label class="radio-inline">
-                            <input type="radio" name="jenis_tanah" value="Perumahan">
+                            <input type="radio" name="jenis_tanah" value="Perumahan" required>
                             Perumahan
                         </label>
                         <label class="radio-inline">
@@ -220,7 +220,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-3">6. Dasar Penguasaan : </label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="dasar_penguasaan">
+                        <input type="text" class="form-control" name="dasar_penguasaan" required>
                     </div>
                 </div>
 
@@ -228,7 +228,7 @@
                     <label class="control-label col-md-3">7. Rencana Penggunaan : </label>
                     <div class="col-md-9">
                         <label class="radio-inline">
-                            <input type="radio" name="rencana_penggunaan" value="Perumahan">
+                            <input type="radio" name="rencana_penggunaan" value="Perumahan" required>
                             Perumahan
                         </label>
                         <label class="radio-inline">

@@ -21,9 +21,12 @@ class DashboardController extends Controller
         $pencetakan = Permohonan::where('status_id','11')->get();
         $dicetak = Permohonan::where('status_id','12')->get();
         $selesai = Permohonan::where('status_id','13')->get();
-        $status = Status::orderBy('id','asc')->get();
+        $status1 = Status::where('id', 10)->get();
+        $status2 = Status::where('id', 11)->get();
+        $status3 = Status::where('id', 12)->get();
+        $status4 = Status::where('id', 13)->get();
 
-        return view('hhp.dashboard',compact('petugasA','publikasi','pencetakan','dicetak','selesai','status'));
+        return view('hhp.dashboard',compact('petugasA','publikasi','pencetakan','dicetak','selesai','status1','status2','status3','status4'));
     }
 
     /**
