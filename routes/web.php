@@ -23,7 +23,7 @@ Route::view('/register', function() {
 
 Route::get('/home', 'HomeController@index')->name('check-dashboard');
 
-Route::get('permohonan/{permohonan}', 'PermohonanController@lihat');
+Route::get('permohonan/{permohonan}', 'PermohonanController@lihat')->name('permohonan');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::resource('dashboard', 'DashboardController')->names(['index' => 'admin.dashboard']);

@@ -20,9 +20,10 @@ class DashboardController extends Controller
         $pembayaran = Permohonan::where('status_id','6')->get();
         $ptpgt = Permohonan::where('status_id','7')->get();
 
-        $status = Status::orderBy('id','asc')->get();
+        $status1 = Status::where('id','6')->get();
+        $status2 = Status::where('id','8')->get();
 
-        return view('p2.dashboard',compact('aspek','status','pembayaran','ptpgt'));
+        return view('p2.dashboard',compact('aspek','status1','status2','pembayaran','ptpgt'));
     }
 
     /**
@@ -77,10 +78,6 @@ class DashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $aspek = Permohonan::find($id);
-        $aspek->status_id = $request->status_id;
-        $aspek->update();
-
         $ptpgt = Permohonan::find($id);
         if ($request->has('file_ptpgt')) {
             $i = $request->file('file_ptpgt');

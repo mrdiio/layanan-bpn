@@ -15,7 +15,10 @@ class IPController extends Controller
      */
     public function index()
     {
-        return view('ip.dashboard');
+        $permohonan = Permohonan::where('status_id','1')->get();
+        $status = Status::where('id','2')->get();
+
+        return view('ip.permohonan-create',compact('permohonan','status'));
     }
 
     /**
@@ -25,10 +28,7 @@ class IPController extends Controller
      */
     public function create()
     {
-        $permohonan = Permohonan::where('status_id','1')->get();
-        $status = Status::orderBy('id','asc')->get();
 
-        return view('ip.permohonan-create',compact('permohonan','status'));
     }
 
     /**
@@ -78,7 +78,7 @@ class IPController extends Controller
 
         $permohonan->save();
 
-        return redirect()->action('IPController@create')->with('ubah', 'Sukses');
+        return redirect()->action('IPController@index')->with('ubah', 'Sukses');
     }
 
     /**

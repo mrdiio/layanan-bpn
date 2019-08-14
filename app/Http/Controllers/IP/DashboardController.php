@@ -19,9 +19,10 @@ class DashboardController extends Controller
         $prapengukuran = Permohonan::where('status_id','2')->get();
         $pengukuran = Permohonan::where('status_id','3')->get();
         $masukp2 = Permohonan::where('status_id','4')->get();
-        $status = Status::orderBy('id','asc')->get();
+        $status1 = Status::where('id','3','')->get();
+        $status2 = Status::where('id','4','')->get();
 
-        return view('ip.dashboard',compact('prapengukuran','pengukuran','masukp2','status'));
+        return view('ip.dashboard',compact('prapengukuran','pengukuran','masukp2','status1','status2'));
     }
 
     /**
@@ -76,10 +77,6 @@ class DashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $prapengukuran = Permohonan::find($id);
-        $prapengukuran->status_id = $request->status_id;
-        $prapengukuran->update();
-
         $pengukuran = Permohonan::find($id);
         if ($request->has('file_peta_bidang')) {
             $i = $request->file('file_peta_bidang');

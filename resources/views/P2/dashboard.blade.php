@@ -55,7 +55,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h5 class="modal-title">Ubah Status</h5>
             </div>
-            <form role="form" method="POST" action="/p2/dashboard/{{$edit->id}}" enctype="multipart/form-data">
+            <form class="form-horizontal" method="POST" action="/p2/dashboard/{{$edit->id}}" enctype="multipart/form-data">
                 {{method_field('PUT')}}
                 {{ csrf_field() }}
                 <div class="modal-body">
@@ -63,15 +63,13 @@
                         <label class="col-lg-3 control-label">Status</label>
                         <div class="col-lg-9">
                             <select class="select" name="status_id" class="form-control" required>
-                                <option></option>
-                                @foreach($status as $s)
-                                <option value="{{ $s->id }}" {{ $edit->status_id == $s->id ? 'selected' : '' }}> {{ $s->nama}}</option>
+                                @foreach($status1 as $s)
+                                <option value="{{ $s->id }}"> {{ $s->nama}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                 </div>
-                <br>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary pull-right">Simpan</button>
                     <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
@@ -90,7 +88,7 @@
                 <h5 class="panel-title">Menunggu Pembayaran PTPGT</h5>
             </div>
             <div class="table-responsive">
-                <table class="table datatable-basic">
+                <table class="table datatable-ptpgt">
                     <thead>
                         <tr>
                             <th width=5%>#</th>
@@ -170,27 +168,25 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h5 class="modal-title">Upload PTPGT Dan Ubah Status</h5>
             </div>
-            <form role="form" method="POST" action="/p2/dashboard/{{$peta->id}}" enctype="multipart/form-data">
+            <form class="form-horizontal" method="POST" action="/p2/dashboard/{{$peta->id}}" enctype="multipart/form-data">
                 {{method_field('PUT')}}
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="form-group">
                         <label class="col-lg-3 control-label">PT PGT</label>
                             <div class="col-lg-9">
-                                <input type="file" class="form-control" name="file_ptpgt">
+                                <input type="file" class="form-control" name="file_ptpgt" required>
                             </div>
                         <label class="col-lg-3 control-label">Status</label>
                         <div class="col-lg-9">
                             <select class="select" name="status_id" class="form-control" required>
-                                <option></option>
-                                @foreach($status as $s)
+                                @foreach($status2 as $s)
                                 <option value="{{ $s->id }}" {{ $peta->status_id == $s->id ? 'selected' : '' }}> {{ $s->nama}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                 </div>
-                <br>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary pull-right">Simpan</button>
                     <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
@@ -206,24 +202,20 @@
 @push('js')
 <script type="text/javascript" src="{{ asset('js/plugins/forms/styling/uniform.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pages/form_layouts.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/forms/validation/validate.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/forms/wizards/stepy.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/pages/wizard_stepy.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('js/plugins/tables/datatables/datatables.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/forms/selects/select2.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pages/datatables_basic.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/notifications/toastr.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/notifications/sweet_alert.min.js') }}"></script>
 <script>
     $(function() {
       $('.datatable-basic').DataTable({
         columnDefs: [{ 
             orderable: false,
             width: '100px',
-            targets: [ 4 ]
+            targets: [ 6 ]
         }],
       });
+      $('.datatable-ptpgt').DataTable();
     });
 </script>
 @endpush

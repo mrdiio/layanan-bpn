@@ -63,9 +63,8 @@
                         <label class="col-lg-3 control-label">Status</label>
                         <div class="col-lg-9">
                             <select class="select" name="status_id" class="form-control" required>
-                                <option></option>
                                 @foreach($status as $s)
-                                <option value="{{ $s->id }}" {{ $edit->status_id == $s->id ? 'selected' : '' }}> {{ $s->nama}}</option>
+                                <option value="{{ $s->id }}"> {{ $s->nama}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -87,22 +86,17 @@
 @push('js')
 <script type="text/javascript" src="{{ asset('js/plugins/forms/styling/uniform.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pages/form_layouts.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/forms/validation/validate.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/forms/wizards/stepy.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/pages/wizard_stepy.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('js/plugins/tables/datatables/datatables.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/plugins/forms/selects/select2.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pages/datatables_basic.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/notifications/toastr.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/notifications/sweet_alert.min.js') }}"></script>
 <script>
     $(function() {
       $('.datatable-basic').DataTable({
         columnDefs: [{ 
             orderable: false,
             width: '100px',
-            targets: [ 4 ]
+            targets: [ 6 ]
         }],
       });
     });
