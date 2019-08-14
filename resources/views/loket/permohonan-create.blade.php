@@ -106,7 +106,6 @@
                         <em class="text-muted">*Kosongkan Jika Tidak Ada</em>
                         <hr>
                         <div class="box-body" id="daftar_barang">
-                            {{-- masih kosong karena belum ada barang/jasa --}}
                         </div>
                     </div>
                     
@@ -177,7 +176,12 @@
                 <div class="form-group">
                     <label class="control-label col-md-3">4. Status Tanah : </label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="status_tanah" required>
+                        <select name="status_tanah" id="status_tanah" class="select" required>
+                            <option selected disabled hidden></option>
+                            <option>Hak Milik</option>
+                            <option>Hak Guna Bangunan</option>
+                            <option>Hak Guna Usaha</option>
+                        </select>
 
                         <label class="control-label col-md-3">(Hak yang melekat di atas tanah)</label>
                         <div class="col-md-3">
