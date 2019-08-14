@@ -8,6 +8,7 @@ use App\Tanah;
 use App\Permohonan;
 use Illuminate\Http\Request;
 use App\Http\Requests\PermohonanRequest;
+use PDF;
 
 class PermohonanController extends Controller
 {
@@ -171,5 +172,13 @@ class PermohonanController extends Controller
     {
         $permohonan->delete();
         return response()->json($permohonan, 200);
+    }
+
+    public function pdf()
+    {
+        $permohonan = Permohonan::where('status_id', 13)->orderBy('updated_at', 'desc')->get();
+        $pdf = PDF::loadView('hhp.permohonan-selesai-pdf', compact('permohonan'))->setPaper('a4', 'landscape');
+        
+        return $pdf->stream();
     }
 }

@@ -29,7 +29,7 @@
                         @foreach ($aspek as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data->nomor_pemohon }}</td>
+                            <td><a href="{{ route('permohonan',$data->id) }}"> {{ $data->nomor_pemohon }}</a></td>
                             <td>{{ $data->pemohon->nama }}</td>
                             <td>{{ $data->pemohon->alamat }}</td>
                             <td>{{ $data->pemohon->no_hp }}</td>
@@ -103,7 +103,7 @@
                         @foreach ($pembayaran as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data->nomor_pemohon }}</td>
+                            <td><a href="{{ route('permohonan',$data->id) }}"> {{ $data->nomor_pemohon }}</a></td>
                             <td>{{ $data->pemohon->nama }}</td>
                             <td>{{ $data->pemohon->alamat }}</td>
                             <td>{{ $data->pemohon->no_hp }}</td>
@@ -142,7 +142,7 @@
                         @foreach ($ptpgt as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data->nomor_pemohon }}</td>
+                            <td><a href="{{ route('permohonan',$data->id) }}"> {{ $data->nomor_pemohon }}</a></td>
                             <td>{{ $data->pemohon->nama }}</td>
                             <td>{{ $data->pemohon->alamat }}</td>
                             <td>{{ $data->pemohon->no_hp }}</td>

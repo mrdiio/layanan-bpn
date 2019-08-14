@@ -29,7 +29,7 @@
                         @foreach ($petugasA as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data->nomor_pemohon }}</td>
+                            <td><a href="{{ route('permohonan',$data->id) }}"> {{ $data->nomor_pemohon }}</a></td>
                             <td>{{ $data->pemohon->nama }}</td>
                             <td>{{ $data->pemohon->alamat }}</td>
                             <td>{{ $data->pemohon->no_hp }}</td>
@@ -71,7 +71,7 @@
                         @foreach ($publikasi as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data->nomor_pemohon }}</td>
+                            <td><a href="{{ route('permohonan',$data->id) }}"> {{ $data->nomor_pemohon }}</a></td>
                             <td>{{ $data->pemohon->nama }}</td>
                             <td>{{ $data->pemohon->alamat }}</td>
                             <td>{{ $data->pemohon->no_hp }}</td>
@@ -113,7 +113,7 @@
                         @foreach ($pencetakan as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data->nomor_pemohon }}</td>
+                            <td><a href="{{ route('permohonan',$data->id) }}"> {{ $data->nomor_pemohon }}</a></td>
                             <td>{{ $data->pemohon->nama }}</td>
                             <td>{{ $data->pemohon->alamat }}</td>
                             <td>{{ $data->pemohon->no_hp }}</td>
@@ -155,7 +155,7 @@
                         @foreach ($dicetak as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $data->nomor_pemohon }}</td>
+                            <td><a href="{{ route('permohonan',$data->id) }}"> {{ $data->nomor_pemohon }}</a></td>
                             <td>{{ $data->pemohon->nama }}</td>
                             <td>{{ $data->pemohon->alamat }}</td>
                             <td>{{ $data->pemohon->no_hp }}</td>
@@ -178,7 +178,13 @@
         <!-- Basic datatable -->
         <div class="panel panel-danger panel-bordered">
             <div class="panel-heading">
-                <h5 class="panel-title">Permohonan Selesai</h5>
+                <form action="{{ route('pdf') }}" method="post" target="_blank">
+                    @csrf
+                    <h5 class="panel-title">
+                        Permohonan Selesai 
+                        <button type="submit" class="btn btn-success">Download PDF</button>
+                    </h5>
+                </form>
             </div>
             <div class="table-responsive">
                 <table class="table datatable-selesai">
