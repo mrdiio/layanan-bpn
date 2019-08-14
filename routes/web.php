@@ -34,7 +34,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 });
 
 Route::get('permohonan/{permohonan}', 'PermohonanController@lihat')->name('permohonan');
-Route::post('getData', 'PermohonanController@pdf')->name('pdf');
+Route::post('getPdf', 'PermohonanController@pdf')->name('pdf');
 
 Route::group(['prefix' => 'loket', 'middleware' => 'role:Loket|Superadmin', 'as' => 'loket.'], function () {
     Route::resource('dashboard', 'loket\DashboardController');
