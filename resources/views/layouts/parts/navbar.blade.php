@@ -15,8 +15,6 @@
 						<i class="caret"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#"><i class="icon-user"></i> My profile</a></li>
-                        <li class="divider"></li>
                         <li>
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
