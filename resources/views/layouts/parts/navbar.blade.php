@@ -43,9 +43,6 @@
                     <!-- Main -->
                     
                     <li class="{{ request()->is('*/dashboard') ? 'active' : '' }}"><a href="{{ route('check-dashboard') }}"><i class="icon-home4 position-left"></i> <span>Dashboard</span></a></li>
-                    @role('Admin|Superadmin')
-                    <li class="{{ request()->is('*/user') ? 'active' : '' }}"><a href="{{ route('user.index') }}"><i class="icon-user position-left"></i> <span>User</span></a></li>
-                    @endrole
                     @role('Superadmin')
                     <li class="dropdown">
                         <a href="#"class="dropdown-toggle" data-toggle="dropdown">

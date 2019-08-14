@@ -28,7 +28,7 @@ Route::get('permohonan/{permohonan}', 'PermohonanController@lihat')->name('permo
 Route::post('getPdf', 'PermohonanController@pdf')->name('pdf');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
-    Route::resource('dashboard', 'DashboardController')->names(['index' => 'admin.dashboard']);
+    Route::resource('dashboard', 'UserController')->names(['index' => 'admin.dashboard']);
     Route::resource('user', 'UserController');
     Route::resource('permission', 'PermissionController');
     Route::resource('role', 'RoleController');
