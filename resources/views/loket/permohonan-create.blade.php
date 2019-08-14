@@ -32,7 +32,7 @@
                     <div class="col-md-4">
                         <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                         <input type="number" name="umur" class="form-control" placeholder="Umur" required>
                     </div>
                 </div>
