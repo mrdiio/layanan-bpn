@@ -33,6 +33,43 @@
     </div> 
 </div>
 <!-- END: CONTENT/BARS/BAR-3 -->
+<div class="c-content-box c-size-md c-bg-white">
+	<div class="container">
+		<div class="c-content-title-1 c-center c-margin-t-80">
+			<h3 class="c-font-uppercase c-font-bold">Persyaratan Permohonan Sertifikat</h3>
+			<div class="c-line-center"></div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4 wow animate fadeInUp">
+				<ul class="c-content-list-1 c-theme c-separator-dot c-font-uppercase">
+					<li>Fotocopy KTP / Surat Bukti Kewarganegaraan / Identitas Lainnya</li>
+                    <li>Surat Kuasa dari Pimpinan Kongregasi Pasionis Badan Hukum dan Pengesahan</li>
+                    <li>Fotocopy Surat Persetujuan Bidang Usaha dari Instans</li>
+					<li>Fotocopy Surat Rekomendasi dari Departemen Luar Negeri</li>
+					<li>Surat Persetujuan Penguasaan Tanah (untuk Instansi)</li>
+				</ul>
+			</div>
+			<div class="col-sm-4 wow animate fadeInUp" data-wow-delay="0.2s">
+				<ul class="c-content-list-1 c-theme c-separator-dot c-font-uppercase">
+					<li>Surat Pernyataan Pemohon mengenai Jumlah Bidang, Luas dan Status tanah yang dimilik</li>
+                    <li>Surat Penunjukkan atau Penyerahan Tanah dari Pemerintah</li>
+					<li>Surat Rencana Penguasaan Tanah Jangka Pendek dan Jangka Panjang</li>
+                    <li>Surat Pernyataan atau bukti bahwa seluruh modalnya dimiliki oleh Pemerintah</li>
+                    <li>Surat Pelepasan Kawasan Hutan dan Instansi</li>
+				</ul>
+			</div>
+			<div class="col-sm-4 wow animate fadeInUp" data-wow-delay="0.4s">
+				<ul class="c-content-list-1 c-theme c-separator-dot c-font-uppercase">
+                    <li>Surat Bukti Perolehan Tanah</li>
+					<li>Salinan Surat Ukur / Gambar Situasi</li>
+					<li>IMB</li>
+					<li>Surat-surat lainnya</li>
+				</ul>
+			</div>
+		</div>
+	</div> 
+</div>
 <!-- END: PAGE CONTENT -->
 @endsection
 
