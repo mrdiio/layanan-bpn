@@ -37,7 +37,7 @@ Route::get('permohonan/{permohonan}', 'PermohonanController@lihat')->name('permo
 Route::post('getPdf', 'PermohonanController@pdf')->name('pdf');
 
 Route::group(['prefix' => 'loket', 'middleware' => 'role:Loket|Superadmin', 'as' => 'loket.'], function () {
-    Route::resource('dashboard', 'loket\DashboardController');
+    Route::resource('dashboard', 'Loket\DashboardController');
     Route::resource('permohonan', 'PermohonanController');
     Route::resource('pemohon', 'Loket\PemohonController');
     Route::resource('tanah', 'Loket\TanahController');
