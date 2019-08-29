@@ -52,19 +52,26 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h5 class="modal-title">Ubah Status</h5>
             </div>
-            <form role="form" method="POST" action="/ip/permohonan/{{$edit->id}}" enctype="multipart/form-data">
-                {{method_field('PUT')}}
-                {{ csrf_field() }}
+            <form role="form" method="POST" class="form-horizontal" action="/ip/permohonan/{{$edit->id}}" enctype="multipart/form-data">
+                @csrf
+                @method('put')
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Status</label>
-                        <div class="col-lg-9">
-                            <select class="select" name="status_id" class="form-control" required>
+                        <label class="col-md-3 control-label">Status</label>
+                        <div class="col-md-9">
+                            <select class="select" name="status_id" id="permohonan-masuk" class="form-control" required>
                                 {{-- <option></option> --}}
                                 @foreach($status as $s)
-                                <option value="{{ $s->id }}" {{ $edit->status_id == $s->id ? 'selected' : '' }}> {{ $s->nama}}</option>
+                                <option value="{{ $s->id }}"> {{ $s->nama}}</option>
                                 @endforeach
                             </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group keterangan" hidden>
+                        <label class="col-md-3 control-label">Keterangan</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="keterangan">
                         </div>
                     </div>
                 </div>
@@ -90,13 +97,22 @@
 <script type="text/javascript" src="{{ asset('js/pages/datatables_basic.js') }}"></script>
 <script>
     $(function() {
-      $('.datatable-basic').DataTable({
-        columnDefs: [{ 
-            orderable: false,
-            width: '100px',
-            targets: [ 6 ]
-        }],
-      });
+        $('.datatable-basic').DataTable({
+            columnDefs: [{ 
+                orderable: false,
+                width: '100px',
+                targets: [ 6 ]
+            }],
+        });
+
+        $('#permohonan-masuk').change(function(){
+            if($('#permohonan-masuk').val() == "14"){
+                $('.keterangan').slideDown();
+            }
+            else{
+                $('.keterangan').slideUp();
+            }
+        });
     });
 </script>
 @endpush

@@ -16,7 +16,7 @@ class IPController extends Controller
     public function index()
     {
         $permohonan = Permohonan::where('status_id','1')->get();
-        $status = Status::where('id', 2)->get();
+        $status = Status::whereIn('id', [2, 14])->get();
 
         return view('ip.permohonan-create',compact('permohonan','status'));
     }
@@ -75,6 +75,12 @@ class IPController extends Controller
     {
         $permohonan = Permohonan::find($id);
         $permohonan->status_id = $request->status_id;
+
+        if ($request->status_id == 14) {
+            $permohonan->keterangan = $request->keterangan;
+        } else {
+            $permohonan->keterangan = '-';
+        }
 
         $permohonan->save();
 
