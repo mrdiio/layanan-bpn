@@ -59,7 +59,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Status</label>
                         <div class="col-md-9">
-                            <select class="select" name="status_id" id="permohonan-masuk" class="form-control" required>
+                            <select class="select" name="status_id" class="form-control" required>
                                 {{-- <option></option> --}}
                                 @foreach($status as $s)
                                 <option value="{{ $s->id }}"> {{ $s->nama}}</option>
@@ -68,7 +68,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group keterangan" hidden>
+                    <div class="form-group">
                         <label class="col-md-3 control-label">Keterangan</label>
                         <div class="col-md-9">
                             <input type="text" class="form-control" name="keterangan">
@@ -103,15 +103,6 @@
                 width: '100px',
                 targets: [ 6 ]
             }],
-        });
-
-        $('#permohonan-masuk').change(function(){
-            if($('#permohonan-masuk').val() == "14"){
-                $('.keterangan').slideDown();
-            }
-            else{
-                $('.keterangan').slideUp();
-            }
         });
     });
 </script>

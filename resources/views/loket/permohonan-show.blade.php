@@ -59,10 +59,10 @@
                             <tbody>
                                 <tr>
                                     <td>1.</td>
-                                    <td>Fotocopy KTP / Surat Bukti Kewarganegaraan / Identitas Lainnya</td>
+                                    <td>Fotocopy KTP / Surat Bukti Kewarganegaraan / Identitas Lainnya<span class="text-danger">*</span></td>
                                     <td>
                                         <input type="hidden" name="fc_identitas" value="0" />
-                                        <input {{ $permohonan->fc_identitas == 1 ? 'checked': '' }} value="1" type="checkbox" name="fc_identitas" class="styled">
+                                        <input required {{ $permohonan->fc_identitas == 1 ? 'checked': '' }} value="1" type="checkbox" name="fc_identitas" class="styled">
                                     </td>
                                 </tr>
                                 <tr>
@@ -75,18 +75,18 @@
                                 </tr>
                                 <tr>
                                     <td>3.</td>
-                                    <td>Surat Bukti Perolehan Tanah</td>
+                                    <td>Surat Bukti Perolehan Tanah<span class="text-danger">*</span></td>
                                     <td>
                                         <input type="hidden" name="bukti_perolehan" value="0">
-                                        <input {{ $permohonan->bukti_perolehan == 1 ? 'checked': '' }} value="1" type="checkbox" name="bukti_perolehan" class="styled">
+                                        <input required {{ $permohonan->bukti_perolehan == 1 ? 'checked': '' }} value="1" type="checkbox" name="bukti_perolehan" class="styled">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>4.</td>
-                                    <td>Salinan Surat Ukur / Gambar Situasi</td>
+                                    <td>Salinan Surat Ukur / Gambar Situasi<span class="text-danger">*</span></td>
                                     <td>
                                         <input type="hidden" name="fc_suratukur" value="0">
-                                        <input {{ $permohonan->fc_suratukur == 1 ? 'checked': '' }} value="1" type="checkbox" name="fc_suratukur" class="styled">
+                                        <input required {{ $permohonan->fc_suratukur == 1 ? 'checked': '' }} value="1" type="checkbox" name="fc_suratukur" class="styled">
                                     </td>
                                 </tr>
                                 <tr>
@@ -115,18 +115,18 @@
                                 </tr>
                                 <tr>
                                     <td>8.</td>
-                                    <td>Surat Persetujuan Penguasaan Tanah (untuk Instansi)</td>
+                                    <td>Surat Persetujuan Penguasaan Tanah (untuk Instansi)<span class="text-danger">*</span></td>
                                     <td>
                                         <input type="hidden" name="surat_persetujuan_penguasaan" value="0">
-                                        <input {{ $permohonan->surat_persetujuan_penguasaan == 1 ? 'checked': '' }} value="1" type="checkbox" name="surat_persetujuan_penguasaan" class="styled">
+                                        <input required {{ $permohonan->surat_persetujuan_penguasaan == 1 ? 'checked': '' }} value="1" type="checkbox" name="surat_persetujuan_penguasaan" class="styled">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>9.</td>
-                                    <td>Surat Pernyataan Pemohon mengenai Jumlah Bidang, Luas dan Status tanah yang dimiliki</td>
+                                    <td>Surat Pernyataan Pemohon mengenai Jumlah Bidang, Luas dan Status tanah yang dimiliki<span class="text-danger">*</span></td>
                                     <td>
                                         <input type="hidden" name="surat_pernyataan" value="0">
-                                        <input {{ $permohonan->surat_pernyataan == 1 ? 'checked': '' }} value="1" type="checkbox" name="surat_pernyataan" class="styled">
+                                        <input required {{ $permohonan->surat_pernyataan == 1 ? 'checked': '' }} value="1" type="checkbox" name="surat_pernyataan" class="styled">
                                     </td>
                                 </tr>
                                 <tr>
@@ -139,18 +139,18 @@
                                 </tr>
                                 <tr>
                                     <td>11.</td>
-                                    <td>Surat Penunjukkan atau Penyerahan Tanah dari Pemerintah</td>
+                                    <td>Surat Penunjukkan atau Penyerahan Tanah dari Pemerintah<span class="text-danger">*</span></td>
                                     <td>
                                         <input type="hidden" name="surat_penunjukkan" value="0">
-                                        <input {{ $permohonan->surat_penunjukkan == 1 ? 'checked': '' }} value="1" type="checkbox" name="surat_penunjukkan" class="styled">
+                                        <input required {{ $permohonan->surat_penunjukkan == 1 ? 'checked': '' }} value="1" type="checkbox" name="surat_penunjukkan" class="styled">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>12.</td>
-                                    <td>Surat Rencana Penguasaan Tanah Jangka Pendek dan Jangka Panjang</td>
+                                    <td>Surat Rencana Penguasaan Tanah Jangka Pendek dan Jangka Panjang<span class="text-danger">*</span></td>
                                     <td>
                                         <input type="hidden" name="surat_rencana" value="0">
-                                        <input {{ $permohonan->surat_rencana == 1 ? 'checked': '' }} value="1" type="checkbox" name="surat_rencana" class="styled">
+                                        <input required {{ $permohonan->surat_rencana == 1 ? 'checked': '' }} value="1" type="checkbox" name="surat_rencana" class="styled">
                                     </td>
                                 </tr>
                                 <tr>
