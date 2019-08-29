@@ -69,6 +69,12 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Keterangan</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="keterangan" placeholder="Isi Keterangan Jika Permohonan Ditolak">
+                        </div>
+                    </div>
                 </div>
                 <br>
                 <div class="modal-footer">

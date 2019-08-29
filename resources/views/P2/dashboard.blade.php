@@ -69,6 +69,12 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Keterangan</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="keterangan" placeholder="Isi Keterangan Jika Permohonan Ditolak">
+                        </div>
+                    </div>
                 </div>
                 <br>
                 <div class="modal-footer">
@@ -176,7 +182,7 @@
                     <div class="form-group">
                         <label class="col-lg-3 control-label">PT PGT</label>
                             <div class="col-lg-9">
-                                <input type="file" class="form-control" name="file_ptpgt" required>
+                                <input type="file" class="form-control" name="file_ptpgt">
                             </div>
                         <label class="col-lg-3 control-label">Status</label>
                         <div class="col-lg-9">
@@ -185,6 +191,12 @@
                                 <option value="{{ $s->id }}"> {{ $s->nama}}</option>
                                 @endforeach
                             </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Keterangan</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="keterangan" placeholder="Isi Keterangan Jika Permohonan Ditolak">
                         </div>
                     </div>
                 </div>

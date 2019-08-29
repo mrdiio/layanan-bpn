@@ -16,7 +16,7 @@ class P2Controller extends Controller
     public function index()
     {
         $permohonan = Permohonan::where('status_id','4')->get();
-        $status = Status::where('id', 5)->get();
+        $status = Status::whereIn('id', [5,14])->get();
 
         return view('p2.permohonan-create',compact('permohonan','status'));
     }
@@ -75,6 +75,7 @@ class P2Controller extends Controller
     {
         $permohonan = Permohonan::find($id);
         $permohonan->status_id = $request->status_id;
+        $permohonan->keterangan = $request->keterangan;
 
         $permohonan->save();
 

@@ -16,7 +16,7 @@ class HHPController extends Controller
     public function index()
     {
         $permohonan = Permohonan::where('status_id','8')->get();
-        $status = Status::where('id', 9)->get();
+        $status = Status::whereIn('id', [9,14])->get();
 
         return view('hhp.permohonan-create',compact('permohonan','status'));
     }
@@ -75,7 +75,8 @@ class HHPController extends Controller
     {
         $permohonan = Permohonan::find($id);
         $permohonan->status_id = $request->status_id;
-
+        $permohonan->keterangan = $request->keterangan;
+        
         $permohonan->save();
 
         return redirect()->action('HHPController@index')->with('ubah', 'Sukses');

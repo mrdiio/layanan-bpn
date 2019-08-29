@@ -20,8 +20,8 @@ class DashboardController extends Controller
         $pembayaran = Permohonan::where('status_id','6')->get();
         $ptpgt = Permohonan::where('status_id','7')->get();
 
-        $status1 = Status::where('id', 6)->get();
-        $status2 = Status::where('id', 8)->get();
+        $status1 = Status::whereIn('id', [6,14])->get();
+        $status2 = Status::whereIn('id', [8,14])->get();
 
         return view('p2.dashboard',compact('aspek','status1','status2','pembayaran','ptpgt'));
     }
@@ -86,6 +86,8 @@ class DashboardController extends Controller
             $ptpgt->file_ptpgt = $filename;
         }
         $ptpgt->status_id = $request->status_id;
+        $ptpgt->keterangan = $request->keterangan;
+         
         $ptpgt->update();
 
         return redirect()->action('P2\DashboardController@index')->with('ubah', 'Sukses');

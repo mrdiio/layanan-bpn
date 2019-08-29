@@ -55,7 +55,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h5 class="modal-title">Ubah Status</h5>
             </div>
-            <form role="form" method="POST" action="/p2/permohonan/{{$edit->id}}" enctype="multipart/form-data">
+            <form role="form" method="POST" class="form-horizontal" action="/p2/permohonan/{{$edit->id}}" enctype="multipart/form-data">
                 @method('put')
                 @csrf
                 <div class="modal-body">
@@ -67,6 +67,12 @@
                                 <option value="{{ $s->id }}"> {{ $s->nama}}</option>
                                 @endforeach
                             </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Keterangan</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="keterangan" placeholder="Isi Keterangan Jika Permohonan Ditolak">
                         </div>
                     </div>
                 </div>
