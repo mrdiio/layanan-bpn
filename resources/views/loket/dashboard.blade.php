@@ -9,6 +9,9 @@
     <div class="col-md-12">
         <!-- Basic datatable -->
         <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h5 class="panel-title">Data Permohonan</h5>
+            </div>
             <div class="table-responsive">
                 <table class="table datatable-basic">
                     <thead>
@@ -22,6 +25,9 @@
                     </thead>
                     <tbody>
                         @foreach ($permohonan as $item)
+                        @if ($item->status_id=='14')
+
+                        @else
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td><a href="{{ route('loket.permohonan.show', $item->id) }}">{{ $item->nomor_pemohon }}</a></td>
@@ -37,6 +43,7 @@
                                 </ul>
                             </td>
                         </tr>
+                        @endif
                         @endforeach
                     </tbody>
                 </table>
@@ -45,6 +52,41 @@
         <!-- /basic datatable -->
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- Basic datatable -->
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h5 class="panel-title">Data Permohonan Ditolak</h5>
+            </div>
+            <div class="table-responsive">
+                <table class="table datatable-ditolak">
+                    <thead>
+                        <tr>
+                            <th width=5%>#</th>
+                            <th>No. Pemohon</th>
+                            <th>Nama</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($ditolak as $item)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td><a href="{{ route('loket.permohonan.show', $item->id) }}">{{ $item->nomor_pemohon }}</a></td>
+                            <td>{{ $item->pemohon->nama }}</td>
+                            <td><span class="label label-danger">{{ $item->status->nama }}</span></td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /basic datatable -->
+    </div>
+</div>
+
 @endsection
 
 @push('js')
@@ -59,6 +101,13 @@
             orderable: false,
             width: '100px',
             targets: [ 4 ]
+        }],
+      });
+      $('.datatable-ditolak').DataTable({
+        columnDefs: [{ 
+            orderable: false,
+            width: '100px',
+            targets: [ 3 ]
         }],
       });
     });

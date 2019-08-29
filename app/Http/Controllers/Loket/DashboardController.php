@@ -16,7 +16,8 @@ class DashboardController extends Controller
     public function index()
     {
         $permohonan = Permohonan::orderBy('id','desc')->get();
-        return view('loket.dashboard', compact('permohonan'));
+        $ditolak = Permohonan::where('status_id','14')->get();
+        return view('loket.dashboard', compact('permohonan','ditolak'));
     }
 
     /**
