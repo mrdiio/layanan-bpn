@@ -67,7 +67,7 @@
                             <th width=5%>#</th>
                             <th>No. Pemohon</th>
                             <th>Nama</th>
-                            <th>Status</th>
+                            <th>Keterangan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -76,7 +76,7 @@
                             <td>{{ $loop->iteration }}</td>
                             <td><a href="{{ route('loket.permohonan.show', $item->id) }}">{{ $item->nomor_pemohon }}</a></td>
                             <td>{{ $item->pemohon->nama }}</td>
-                            <td><span class="label label-danger">{{ $item->status->nama }}</span></td>
+                            <td>{{ $item->keterangan }}</td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -104,11 +104,6 @@
         }],
       });
       $('.datatable-ditolak').DataTable({
-        columnDefs: [{ 
-            orderable: false,
-            width: '100px',
-            targets: [ 3 ]
-        }],
       });
     });
 
