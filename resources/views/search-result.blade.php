@@ -25,6 +25,8 @@
 								<th class="col-md-3">Nomor Pemohon</th>
 								<th class="col-md-3">Nama</th>
                                 <th class="col-md-4">Status</th>
+                                <th class="col-md-4">Posisi</th>
+                                <th class="col-md-4">Keterangan</th>
                                 <th class="col-md-4">Unduh</th>
 							</tr>
 							</thead>
@@ -34,6 +36,8 @@
 								<td>{{ $hasil->nomor_pemohon }}</td>
 								<td>{{ $hasil->pemohon->nama }}</td>
                                 <td>{{ $hasil->status->nama }}</td>
+                                <td>{{ $hasil->status->keterangan}}</td>
+                                <td>{{ $hasil->keterangan}}</td>
                                 <td>
                                     @if ($hasil->file_peta_bidang)
                                         <button type="button" onclick="window.location.href='{{ asset('images/peta_bidang/'.$hasil->file_peta_bidang) }}';" class="btn btn-success c-btn-square c-btn-uppercase c-btn-bold">Peta Bidang</button>
