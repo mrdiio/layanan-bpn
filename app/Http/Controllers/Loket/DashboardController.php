@@ -15,9 +15,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $permohonan = Permohonan::orderBy('id','desc')->get();
+        $baru = Permohonan::where('status_id','15')->get();
+        $permohonan = Permohonan::whereNotIn('status_id',[14])->orderBy('id','desc')->get();
         $ditolak = Permohonan::where('status_id','14')->get();
-        return view('loket.dashboard', compact('permohonan','ditolak'));
+        return view('loket.dashboard', compact('baru', 'permohonan', 'ditolak'));
     }
 
     /**

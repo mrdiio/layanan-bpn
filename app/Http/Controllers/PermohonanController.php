@@ -96,7 +96,7 @@ class PermohonanController extends Controller
         $permohonan->pemohon_id = $pemohon->id;
         $permohonan->tanah_id = $tanah->id;
         $permohonan->nomor_pemohon = time();
-        $permohonan->status_id = 1;
+        $permohonan->status_id = 15;
         $permohonan->save();
 
         // return back()->with('tambah', 'Sukses');
@@ -139,7 +139,6 @@ class PermohonanController extends Controller
      */
     public function update(Request $request, Permohonan $permohonan)
     {
-        // return $permohonan;
         $permohonan->fc_identitas = $request->fc_identitas;
         $permohonan->surat_kuasa = $request->surat_kuasa;
         $permohonan->bukti_perolehan = $request->bukti_perolehan;
@@ -158,6 +157,11 @@ class PermohonanController extends Controller
         if ($request->bayar_ptpgt == 1) {
             $permohonan->status_id = 7;
         }
+
+        if ($permohonan->status_id == 15) {
+            $permohonan->status_id = 1;
+        }
+        
         $permohonan->update();
 
         return back()->with('ubah', 'Sukses');

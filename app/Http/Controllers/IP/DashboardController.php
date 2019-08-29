@@ -18,11 +18,10 @@ class DashboardController extends Controller
     {
         $prapengukuran = Permohonan::where('status_id','2')->get();
         $pengukuran = Permohonan::where('status_id','3')->get();
-        $masukp2 = Permohonan::where('status_id','4')->get();
-        $status1 = Status::where('id', 3)->get();
-        $status2 = Status::where('id', 4)->get();
+        $status1 = Status::whereIn('id', [3,14])->get();
+        $status2 = Status::whereIn('id', [4,14])->get();
 
-        return view('ip.dashboard',compact('prapengukuran','pengukuran','masukp2','status1', 'status2'));
+        return view('ip.dashboard',compact('prapengukuran','pengukuran','status1', 'status2'));
     }
 
     /**
@@ -85,6 +84,7 @@ class DashboardController extends Controller
             $pengukuran->file_peta_bidang = $filename;
         }
         $pengukuran->status_id = $request->status_id;
+        $pengukuran->keterangan = $request->keterangan;
         $pengukuran->update();
 
         return redirect()->action('IP\DashboardController@index')->with('ubah', 'Sukses');

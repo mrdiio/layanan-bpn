@@ -111,6 +111,13 @@
                             </select>
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Keterangan</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="keterangan" placeholder="Isi keterangan jika permohonan ditolak">
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary pull-right">Simpan</button>
@@ -137,7 +144,7 @@
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Peta Bidang</label>
                         <div class="col-lg-9">
-                            <input type="file" class="form-control" name="file_peta_bidang" required>
+                            <input type="file" class="form-control" name="file_peta_bidang">
                         </div>
                         <label class="col-lg-3 control-label">Status</label>
                         <div class="col-lg-9">
@@ -146,6 +153,12 @@
                                 <option value="{{ $s->id }}"> {{ $s->nama}}</option>
                                 @endforeach
                             </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Keterangan</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="keterangan" placeholder="Isi keterangan jika permohonan ditolak">
                         </div>
                     </div>
                 </div>
@@ -171,13 +184,14 @@
 <script type="text/javascript" src="{{ asset('js/pages/datatables_basic.js') }}"></script>
 <script>
     $(function() {
-      $('.datatable-basic').DataTable({
-        columnDefs: [{ 
-            orderable: false,
-            width: '100px',
-            targets: [ 4 ]
-        }],
-      });
+        $('.datatable-basic').DataTable({
+            columnDefs: [{ 
+                orderable: false,
+                width: '100px',
+                targets: [ 4 ]
+            }],
+        });
     });
+
 </script>
 @endpush
